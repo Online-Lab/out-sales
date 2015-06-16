@@ -1,31 +1,54 @@
-'use strict';
+var gulp = require('gulp'),
+    stylus = require('gulp-stylus'),
+    concat = require('gulp-concat'),
+    autoprefixer = require('gulp-autoprefixer'),
+    connect = require('gulp-connect-multi')();
 
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var wrench = require('wrench');
 
-var options = {
-  src: 'src',
-  dist: 'dist',
-  tmp: '.tmp',
-  e2e: 'e2e',
-  errorHandler: function(title) {
-    return function(err) {
-      gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
-      this.emit('end');
-    };
-  },
-  wiredep: {
-    directory: 'bower_components'
+
+gulp.task('stylus', function(){
+    gulp.src(['bower_components/normalize.styl/normalize.styl', 'css/stylus/*.styl', 'css/stylus/!(svg.styl)'])
+       .pipe(stylus({compress : true}))
+       .pipe(concat('concat.css'))
+       .pipe(autoprefixer())
+       .pipe(gulp.dest('css/build'));
+});
+
+gulp.task('svgcss', function(){
+    gulp.src(['css/stylus/svg.styl'])
+       .pipe(stylus({compress : true}))
+       .pipe(concat('svg.css'))
+       .pipe(autoprefixer())
+       .pipe(gulp.dest('css/build'));
+});
+
+
+
+gulp.task('connect', connect.server({
+  root: ['../out-sales'],
+  port: 3000,
+  livereload: true,
+  open: {
+    browser: 'Google Chrome' // if not working OS X browser: 'Google Chrome' 
   }
-};
+}));
 
-wrench.readdirSyncRecursive('./gulp').filter(function(file) {
-  return (/\.(js|coffee)$/i).test(file);
-}).map(function(file) {
-  require('./gulp/' + file)(options);
+gulp.task('html', function () {
+  gulp.src('*.html')
+    .pipe(connect.reload());
 });
 
-gulp.task('default', ['clean'], function () {
-    gulp.start('build');
+gulp.task('js', function () {
+  gulp.src('*.js')
+    .pipe(connect.reload());
 });
+
+gulp.task('watch', function(){
+    gulp.watch(['css/stylus/*.styl'], ['stylus']);
+    gulp.watch(['*.html'], ['html']);
+    gulp.watch(['*.js'], ['js']);
+});
+
+
+gulp.task('default', ['connect', 'stylus', 'watch', 'svgcss'])
+
