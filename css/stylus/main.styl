@@ -1,7 +1,7 @@
 @import mixins
 @import variables
 body
-    font-family Tahoma
+    font-family "Verdana"
     font-size 14px
     color #fff
 ul,
@@ -32,6 +32,7 @@ li
 .logo-desk
     display block
     color #fff
+    font-family "Tahoma"
 
 
 .fs1
@@ -43,44 +44,106 @@ li
 .fs2
     font-size txt50
     font-weight 900
-
+    font-family "Tahoma"
 .fs3
     font-size txt15
     fony-weight 100
-    font-family Verdana
+        font-family "Tahoma"
     
 .fs4
     text-align center
-    font-family Verdana
     fony-weight 100
     font-size txt30
 
 .fs5
     text-align center
-    font-family Verdana
     fony-weight 700
     font-size txt20
     text-transform uppercase
 
+.fs6
+    font-weight 900
+    font-size txt25
+    text-align center
+    text-transform uppercase
+
+.fs7
+    font-weight 100
+    font-size txt20
+    text-transform uppercase
+
+.fs8
+    font-weight 900
+    font-size txt70
+    font-family "Tahoma"
+    margin 0
+.fs9
+    font-weight 700
+    font-size txt18
+    font-family "Tahoma"
+    text-transform uppercase
+
+.fs10
+    font-weight 100
+    text-align center
+    font-size txt25
+    margin 50px 0
+
+.fs11
+    font-weight 100
+    font-size txt30
+    margin 50px 0
+    text-transform uppercase
+
+
+.db
+    color db
+
+
 .sec1
     background url(../../img/bg1.png) 0 0 no-repeat
-    background-size cover
-    background-position center top
     
 .sec2
     background-color #00455E
+    
+.sec3
+    background-color cb
+
+.sec4
+    background url(../../img/bg2.jpg) 0 0 no-repeat
+
+.sec5
+    background db url(../../img/bg1.png) center center no-repeat
+    background-size 100% auto
+
+.sec1,
+.sec4
+    background-size cover
+    background-position center top
+.ylw
+    color ylw
 
 
 
 
+.mt100
+    margin-top 100px
+.mt50
+    margin-top 50px
+.vp
+    padding 100px 0
 
 
-.tel
-    margin-bottom 50px
+
+// .tel
+//     margin-bottom 50px
+
+.title
+    margin 0
 
 .btn-wrap
     text-align center
-    margin-bottom 200px
+    // margin-bottom 200px
 
 .btn   
     display inline-block
@@ -94,32 +157,86 @@ li
     font-family verdana 
     font-weight 100
     margin 0 50px
-    
-.wish-wrap
+
+.row
     flex()
-    margin-top 100px
     justify-content space-around
-    .wish
-        width 25%
+    .cell1_2,
+    .cell1_3
         display inline-block
-        .img
-            width 70%
-            height 170px
-            margin auto
-            -webkit-mask-repeat no-repeat
-            -webkit-mask-position center
-            background-color #fff
+        text-align center
+        
+    .cell1_3
+        width (100/3)%
         .txt
             text-align center
             text-transform uppercase
             font-size 19px
             line-height 25px
             
-        &:hover
+    .cell1_2
+        width 50%
+    &.v1
+        .cell1_2:first-child
+            text-align right
             .img
-                background-color hovery
-            .txt
-                color hovery
+                float right
+        .cell1_2:last-child
+            text-align left
+            .img
+                float left
+        .img
+            width 25%
+            display inline-block
+            height 150px
+        .txt
+            width 75%
+            display inline-block
+    &.v2
+        .img
+            width 100%
+            display inline-block
+            height 140px
+            -webkit-mask-size: 100% 100%;
+.ylw
+    color ylw
+    .img
+        background-color: ylw
+    .list-benefits
+        color ylw
+        li:after
+            background-color ylw
+    .btn
+        background rgba(255,193,7,.5)
+        border-color ylw
+        color #fff
+        &:hover
+            background rgba(255,193,7,1)
+.gr
+    .img
+        background-color: gr
+    .list-benefits
+        color gr
+        li:after
+            background-color gr
+    .btn
+        background rgba(207,216,220,.5)
+        border-color gr
+        color #fff
+        &:hover
+            background rgba(207,216,220,1)
+
+
+.ylwh>div
+    &:hover
+        color hovery
+        .img
+            background-color hovery
+        // .txt
+        //     color hovery
+
+
+
 .rocket
     -webkit-mask-image: url(../../img/rocket.svg)
     // background url(../../img/rocket.svg) 0 0 no-repeat
@@ -130,3 +247,103 @@ li
 
 .star
     -webkit-mask-image: url(../../img/star.svg)
+
+.lamp
+    -webkit-mask-image: url(../../img/lamp.svg)
+
+
+.gears
+    -webkit-mask-image: url(../../img/gears.svg)
+    // background url(../../img/rocket.svg) 0 0 no-repeat
+        
+.humans
+    -webkit-mask-image: url(../../img/humans.svg)
+    // -webkit-mask-size auto 60%
+
+.kit
+    -webkit-mask-image: url(../../img/kit.svg)
+
+
+.mike
+    -webkit-mask-image: url(../../img/mike.svg)
+
+.pig
+    -webkit-mask-image: url(../../img/pig.svg)
+
+.clock
+    -webkit-mask-image: url(../../img/clock.svg)
+
+
+
+.rocket,
+.levin,
+.star
+    width 70%
+    height 170px
+
+.lamp
+    width 50%
+    height 130px
+
+.gears,
+.humans,
+.kit,
+.mike
+    height 100px
+    -webkit-mask-size: 60% 50%;
+
+.rocket,
+.levin,
+.star,
+.lamp,
+.gears,
+.humans,
+.kit,
+.mike,
+.pig,
+.clock
+    margin auto
+    -webkit-mask-repeat no-repeat
+    -webkit-mask-position center center
+    background-color #fff
+
+
+
+
+
+.list-benefits
+    display block
+    li
+        display block
+        font-size txt18
+        display block
+        margin-bottom 60px
+        position relative
+        &:after
+            content ""
+            width 10px
+            height 10px
+            // background-color: #FFF
+            border-radius 10px
+            hcenter()
+            bottom -30px
+        &:last-child:after
+            display none
+            
+
+.app-form
+    text-align center
+    vertical-align bottom
+    input
+        vertical-align bottom
+        width 250px
+        height 82px
+        color cb
+        border 3px solid cb
+        border-radius 10px
+        padding 0 10px
+        box-sizing border-box
+        margin 0 10px
+        text-align center
+    .btn
+        margin 0 30px

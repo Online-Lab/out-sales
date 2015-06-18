@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    $('#fullpage').fullpage({
-        autoScrolling: false
-    });
+    // $('#fullpage').fullpage({
+    //     autoScrolling: false,
+    //     scrollOverflow: true
+    // });
 });
