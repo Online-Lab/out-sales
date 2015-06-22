@@ -1,8 +1,8 @@
-$(document).ready(function() {
-    $('#fullpage').fullpage({
-        autoScrolling: true,
-        scrollOverflow: true,
-        loopHorizontal: true,
-        slidesNavigation: true
-    });
-});
+// $(document).ready(function() {
+//     $('#fullpage').fullpage({
+//         autoScrolling: false,
+//         scrollOverflow: true,
+//         loopHorizontal: true,
+//         slidesNavigation: true
+//     });
+// });
