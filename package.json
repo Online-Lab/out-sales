@@ -2,12 +2,12 @@
   "name": "out-sales",
   "version": "1.0.0",
   "description": "sales",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "fsanano",
   "license": "ISC",
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "node index.js"
+  },
   "devDependencies": {
     "autoprefixer-stylus": "^0.6.0",
     "gulp-autoprefixer": "^2.3.0",
@@ -16,5 +16,9 @@
     "gulp-filter": "^2.0.2",
     "gulp-stylus": "^2.0.2",
     "gulp-watch": "^4.2.4"
+  },
+  "dependencies": {
+    "bower": "*",
+    "express": "~4.9.x"
   }
 }

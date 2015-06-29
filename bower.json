@@ -1,0 +1,10 @@
+{
+  "name": "out-sales",
+  "version": "0.0.0",
+  "dependencies": {
+    "fullpage.js": "*",
+    "slick.js": "*",
+    "wowjs": "*",
+    "normalize.styl": "*"
+  }
+}
