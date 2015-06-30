@@ -9,9 +9,9 @@
         <meta name='yandex-verification' content='5db9ef37083d31ce' />
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="bower_components/fullpage.js/jquery.fullPage.css">
+        <link rel="stylesheet" href="css/component.css">
+        <link rel="stylesheet" href="css/content.css">
         <link rel="stylesheet" href="css/build/concat.css">
-
-
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -22,18 +22,57 @@
 
             <section class="section sec1">
                 <div class="center vp">
-                    <p class="tel fs1">+7 [499] 348-2443</p>
+                    <div class="header">
+                        <a href="http://www.out-sales.com" class="fs1">out-sales</a>
+                        <p class="tel fs1">+7 [499] 348-2443</p>
+                    </div>
+                    
                     <a href = "" class="logo-wrap">
                         <span class="logo fs2">Out Sales</span>
                         <span class="logo-desk fs3">Ваш путь к продажам!</span>
                     </a>
                     <p class="fs4">Звоним и находим для вас клиентов</p>
-                    <form action="" class="btn-wrap">
-                        <button class="btn">Заказать звонок </button>
-                        <button class="btn">Оставить Заявку</button>
-                    </form>
-                </div>
+                    <div action="" class="btn-wrap">
 
+                        <div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed">
+                            <button type="btn">Заказать <br> звонок</button>
+                            <div class="morph-content">
+                                <div>
+                                    <div class="content-style-form content-style-form-1">
+                                        <span class="icon icon-close">&times;</span>
+                                        <h2>Заказать звонок</h2>
+                                        <form>
+                                            <p><label>Имя</label><input type="text" /></p>
+                                            <p><label>Телефон</label><input type="text" /></p>
+                                            <p><button>Отправить</button></p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="morph-button morph-button-modal morph-button-modal-3 morph-button-fixed">
+                            <button type="btn">Оставить <br> заявку</button>
+                            <div class="morph-content">
+                                <div>
+                                    <div class="content-style-form content-style-form-2">
+                                        <span class="icon icon-close">&times;</span>
+                                        <h2>Оставить заявку</h2>
+                                        <form>
+                                            <p><label>Имя</label><input type="text" /></p>
+                                            <p><label>Почта</label><input type="text" /></p>
+                                            <p><label>Телефон</label><input type="text" /></p>
+                                            <p><button>Отправить</button></p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="scroll-down next-section"><span></span></div>
+                </div>
             </section>
 
 
@@ -375,6 +414,8 @@
         <script src= "bower_components/fullpage.js/vendors/jquery.easings.min.js"></script>
         <script src= "bower_components/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
         <script src= "bower_components/fullpage.js/jquery.fullPage.min.js"></script>
+        <script src= "js/classie.js"></script>
+        <script src= "js/uiMorphingButton_fixed.js"></script>
 
         <script src="js/main.js"></script>
         

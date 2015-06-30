@@ -17,10 +17,11 @@ li
 .center
     width 1200px
     margin auto
-
+    position relative
     section
         display block
         width 100%
+
 
 .logo-wrap
     display block
@@ -102,13 +103,20 @@ li
 
 .db
     color db
-
+.header
+    margin-bottom 40px
+    p,a
+        display inline-block
+        text-decoration none
+    p
+        float right
+        margin 0
 
 .sec1
     background url(../../img/bg1.png) 0 0 no-repeat
     
 .sec2
-    background-color #00455E
+    background-color db
     
 .sec3
     background-color cb
@@ -144,6 +152,48 @@ li
 // .tel
 //     margin-bottom 50px
 
+
+.scroll-down
+    cursor: pointer;
+    width: 24px;
+    position: absolute;
+    bottom: 0;
+    display: block;
+    height: 44px;
+    webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,0.5);
+    left: 50%;
+    margin-left: -12px;
+    z-index: 200;
+    span 
+        display: block;
+        margin: 6px auto;
+        width: 0px;
+        height: 6px;
+        border-radius: 4px;
+        background: #fff;
+        border: 1px solid transparent;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: scroll;
+        animation-name: scroll;
+
+@keyframes scroll
+    0%
+        opacity:1;
+        transform:translateY(0)
+    
+    100%
+        opacity:0;
+        transform:translateY(25px)
+
+
 .title
     margin 0
 
@@ -151,7 +201,9 @@ li
     text-align center
     // margin-bottom 200px
 
-.btn   
+.btn,
+.morph-button > button 
+    color : #fff
     display inline-block
     width 215px
     height 82px
@@ -162,8 +214,9 @@ li
     font-size txt17
     font-family verdana 
     font-weight 100
-    margin 0 50px
-
+    &:hover
+        background-color rgba(255,255,255, 1)
+        color db
 .row
     flex()
     justify-content space-around
@@ -419,3 +472,118 @@ li
             height 100%
         &.active span
             background-color ylw
+            
+
+// pop-up
+
+.icon-close {
+    z-index: 100;
+    display: block;
+    overflow: hidden;
+    width: 3em;
+    height: 3em;
+    text-align: center;
+    line-height: 3;
+    cursor: pointer;
+}
+
+.content-style-form h2 {
+    margin: 0;
+    padding: 0.4em 0 0.3em;
+    text-align: center;
+    font-weight: 300;
+    font-size: 2em;
+}
+
+
+.content-style-form form {
+    padding: 10px 30px;
+}
+
+.content-style-form form p {
+    margin: 0 0 5px 0;
+    font-size: 0.7em;
+}
+
+.content-style-form label {
+    display: block;
+    padding: 10px 0 0;
+    color: #00455E;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.content-style-form input[type="text"],
+.content-style-form input[type="password"] {
+    padding: 10px;
+    width: 100%;
+    border: 2px solid #FFC107;
+    background: transparent;
+    color: #b09a86;
+    font-weight: 300;
+    font-size: 2.2em;
+    box-sizing: border-box;
+}
+
+.content-style-form input[type="text"]:focus,
+.content-style-form input[type="password"]:focus {
+    border-color: #007998;
+    color: #00455E;
+}
+
+.content-style-form input:focus {
+    outline: 0;
+}
+
+.content-style-form button {
+    display: block;
+    margin-top: 2.5em;
+    padding: 1.5em;
+    width: 100%;
+    border: none;
+    background: #FFC107;
+    color: #f9f6e5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
+    font-size: 1.25em;
+}
+
+.content-style-form .icon-close {
+    top: 0;
+    right: 0;
+    color: #ebd3bd;
+    font-size: 75%;
+}
+
+.content-style-form .icon-close:hover {
+    color: #e75854;
+}
+
+.morph-button {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.morph-button.open > button {
+    pointer-events: none;
+}
+
+.morph-content {
+    pointer-events: none;
+}
+
+.morph-button.open .morph-content {
+    pointer-events: auto;
+}
+
+// .morph-content{
+//     display: none;
+// }
+
+// .open .morph-content{
+//     display: block
+// }
