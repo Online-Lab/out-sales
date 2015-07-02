@@ -2,7 +2,7 @@
 @import variables
 body
     font-family "Verdana"
-    font-size 14px
+    font-size 12px
     color #fff
 ul,
 li
@@ -68,7 +68,7 @@ li
 
 .fs6
     font-weight 900
-    font-size txt25
+    font-size txt30
     text-align center
     text-transform uppercase
 
@@ -99,7 +99,24 @@ li
     font-size txt30
     margin 50px 0
     text-transform uppercase
+    
+.fs12
+    font-size txt30
+    text-transform uppercase
+    color lg
+    text-align center
+    font-weight 100
 
+.fs13
+    font-size txt22
+    // text-align center
+    font-weight 100
+.numInCircle
+    display inline-block
+    border 2px solid lg
+    border-radius 30px
+    padding 0.1em 0.4em
+    
 
 .db
     color db
@@ -127,14 +144,17 @@ li
 .sec5
     background db url(../../img/bg1.png) center center no-repeat
     background-size 100% auto
-
+    .logo-wrap 
+        margin 0
+        padding 20px 0
 .sec1,
 .sec4
     background-size cover
     background-position center bottom
 .ylw
     color ylw
-
+.bl
+    color bl
 .section
     margin-top -2px
 
@@ -188,11 +208,9 @@ li
     0%
         opacity:1;
         transform:translateY(0)
-    
     100%
         opacity:0;
         transform:translateY(25px)
-
 
 .title
     margin 0
@@ -224,7 +242,8 @@ li
     .cell1_3
         display inline-block
         text-align center
-        
+
+
     .cell1_3
         width (100/3)%
         .txt
@@ -235,6 +254,10 @@ li
             
     .cell1_2
         width 50%
+    &.v0
+        .img
+            width 70%
+            height 160px
     &.v1
         .cell1_2:first-child
             text-align right
@@ -256,7 +279,32 @@ li
             width 100%
             display inline-block
             height 140px
-            -webkit-mask-size: 100% 100%;
+            // -webkit-mask-size: 100% 100%;
+    &.v3
+        .cell1_2
+            text-align left
+        .img
+            width 18%
+            display inline-block
+            height 110px
+            margin-right 5%
+        .txt
+            width 70%
+            display inline-block
+            text-align left
+            vertical-align top
+            margin 14px 0
+    
+.img 
+    margin auto
+    svg 
+        height: 100%
+        width: 100%
+    
+    &.v2
+        height: 110px
+        width: 19%
+    
 .ylw
     color ylw
     .img
@@ -288,57 +336,58 @@ li
 
 .ylwh>div
     &:hover
-        color hovery
-        .img
-            background-color hovery
+        color ylw
+        .img path
+            fill ylw
         // .txt
         //     color hovery
+.blh>div
+    &:hover
+        color bl
+        .img path
+            fill bl
 
 
-
-.rocket
-    -webkit-mask-image: url(../../img/rocket.svg)
-    // background url(../../img/rocket.svg) 0 0 no-repeat
+// .rocket
+//     -webkit-mask-image: url(../../img/rocket.svg)
+//     // background url(../../img/rocket.svg) 0 0 no-repeat
         
-.levin
-    -webkit-mask-image: url(../../img/levin.svg)
-    // -webkit-mask-size auto 60%
+// .levin
+//     -webkit-mask-image: url(../../img/levin.svg)
+//     // -webkit-mask-size auto 60%
 
-.star
-    -webkit-mask-image: url(../../img/star.svg)
+// .star
+//     -webkit-mask-image: url(../../img/star.svg)
 
-.lamp
-    -webkit-mask-image: url(../../img/lamp.svg)
+// .lamp
+//     -webkit-mask-image: url(../../img/lamp.svg)
 
 
-.gears
-    -webkit-mask-image: url(../../img/gears.svg)
-    // background url(../../img/rocket.svg) 0 0 no-repeat
+// .gears
+//     -webkit-mask-image: url(../../img/gears.svg)
+//     // background url(../../img/rocket.svg) 0 0 no-repeat
         
-.humans
-    -webkit-mask-image: url(../../img/humans.svg)
-    // -webkit-mask-size auto 60%
+// .humans
+//     -webkit-mask-image: url(../../img/humans.svg)
+//     // -webkit-mask-size auto 60%
 
-.kit
-    -webkit-mask-image: url(../../img/kit.svg)
-
-
-.mike
-    -webkit-mask-image: url(../../img/mike.svg)
-
-.pig
-    -webkit-mask-image: url(../../img/pig.svg)
-
-.clock
-    -webkit-mask-image: url(../../img/clock.svg)
+// .kit
+//     -webkit-mask-image: url(../../img/kit.svg)
 
 
+// .mike
+//     -webkit-mask-image: url(../../img/mike.svg)
 
-.rocket,
-.levin,
-.star
-    width 70%
-    height 170px
+// .pig
+//     -webkit-mask-image: url(../../img/pig.svg)
+
+// .clock
+//     -webkit-mask-image: url(../../img/clock.svg)
+
+
+
+
+
 
 .lamp
     width 50%
@@ -351,20 +400,20 @@ li
     height 100px
     -webkit-mask-size: 60% 50%;
 
-.rocket,
-.levin,
-.star,
-.lamp,
-.gears,
-.humans,
-.kit,
-.mike,
-.pig,
-.clock
-    margin auto
-    -webkit-mask-repeat no-repeat
-    -webkit-mask-position center center
-    background-color #fff
+// .rocket,
+// .levin,
+// .star,
+// .lamp,
+// .gears,
+// .humans,
+// .kit,
+// .mike,
+// .pig,
+// .clock
+//     margin auto
+//     -webkit-mask-repeat no-repeat
+//     -webkit-mask-position center center
+//     background-color #fff
 
 
 

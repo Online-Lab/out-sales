@@ -195,13 +195,13 @@
 .morph-button-modal-2.open .morph-content {
 	margin: -210px 0 0 -170px;
 	width: 340px;
-	height: 420px;
+	height: 350px;
 }
 
 .morph-button-modal-3.open .morph-content {
 	margin: -255px 0 0 -210px;
 	width: 420px;
-	height: 510px;
+	height: 400px;
 }
 
 .morph-button-modal-3.open .morph-content > div {
