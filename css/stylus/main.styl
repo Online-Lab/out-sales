@@ -71,6 +71,15 @@ li
     font-size txt30
     text-align center
     text-transform uppercase
+    &.bigger
+        font-size txt38
+.fs6_1
+    font-weight 100
+    margin: auto;
+    font-size txt30
+    text-align center
+    text-transform uppercase
+    color #CFD8DC
 
 .fs7
     font-weight 100
@@ -111,6 +120,7 @@ li
     font-size txt22
     // text-align center
     font-weight 100
+    color #CFD8DC
 .numInCircle
     display inline-block
     border 2px solid lg
@@ -231,6 +241,7 @@ li
     background-color rgba(255,255,255, .3)
     font-size txt17
     font-family verdana 
+    text-transform uppercase
     font-weight 100
     &:hover
         background-color rgba(255,255,255, 1)
@@ -294,10 +305,15 @@ li
             text-align left
             vertical-align top
             margin 14px 0
-    
+    &.v4
+        justify-content center
+        .price,
+        .btn
+            margin auto 4%
+        
 .img 
     margin auto
-    svg 
+    svg, img
         height: 100%
         width: 100%
     
@@ -363,26 +379,26 @@ li
 //     -webkit-mask-image: url(../../img/lamp.svg)
 
 
-// .gears
-//     -webkit-mask-image: url(../../img/gears.svg)
-//     // background url(../../img/rocket.svg) 0 0 no-repeat
+.gears
+    // -webkit-mask-image: url(../../img/gears.svg)
+    background url(../../img/gears.svg) center center no-repeat
         
-// .humans
-//     -webkit-mask-image: url(../../img/humans.svg)
-//     // -webkit-mask-size auto 60%
+.humans
+    background: url(../../img/humans.svg) center center no-repeat
+    // -webkit-mask-size auto 60%
 
-// .kit
-//     -webkit-mask-image: url(../../img/kit.svg)
+.kit
+    background: url(../../img/kit.svg) center center no-repeat
 
 
-// .mike
-//     -webkit-mask-image: url(../../img/mike.svg)
+.mike
+    background: url(../../img/mike.svg) center center no-repeat
 
 // .pig
-//     -webkit-mask-image: url(../../img/pig.svg)
+//     background: url(../../img/pig.svg) center center no-repeat
 
-// .clock
-//     -webkit-mask-image: url(../../img/clock.svg)
+.clock
+    background: url(../../img/clock.svg) center center no-repeat
 
 
 
@@ -398,7 +414,7 @@ li
 .kit,
 .mike
     height 100px
-    -webkit-mask-size: 60% 50%;
+    background-size: 60% 50%;
 
 // .rocket,
 // .levin,
@@ -462,7 +478,7 @@ li
         border 0
     textarea
         width 310px
-        height 180px
+        height 183px
         margin 0px 10px 17px 10px
         border-radius 10px
         border 0
