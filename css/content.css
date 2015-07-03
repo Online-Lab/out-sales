@@ -5,6 +5,7 @@
 	position: absolute;
 	top: 20px;
 	right: 20px;
+	font-size: 16px;
 }
 
 .icon-close:hover {
@@ -351,7 +352,7 @@
 .content-style-sidebar .icon-close {
 	top: 0;
 	right: 0;
-	font-size: 0.85em;
+	font-size: 1.25em;
 }
 
 .content-style-sidebar ul {
