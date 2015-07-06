@@ -5,7 +5,7 @@
 /* Common styles for overlay and modal type (fixed morph) */
 .morph-button-fixed,
 .morph-button-fixed .morph-content {
-	width: 215px;
+	width: 17%;
     height: 82px;
 }
 

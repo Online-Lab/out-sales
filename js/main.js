@@ -5,7 +5,7 @@ $(document).ready(function() {
     //     loopHorizontal: true,
     //     slidesNavigation: true
     // });
-
+    $('.slider').slick();
 });
 
 new WOW().init();
