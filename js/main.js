@@ -5,7 +5,10 @@ $(document).ready(function() {
     //     loopHorizontal: true,
     //     slidesNavigation: true
     // });
-    $('.slider').slick();
+    $('.slider').slick({
+        dots: true,
+        arrows: false
+    });
 });
 
 new WOW().init();
