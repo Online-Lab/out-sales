@@ -3,11 +3,13 @@
 
 
 /* Common styles for overlay and modal type (fixed morph) */
-.morph-button-fixed,
-.morph-button-fixed .morph-content {
+.morph-button-fixed .morph-content,
+.morph-button-fixed{
 	width: 17%;
     height: 82px;
+    position: relative
 }
+
 
 .morph-button-fixed > button {
 	z-index: 1000;
@@ -195,7 +197,7 @@
 .morph-button-modal-2.open .morph-content {
 	margin: -210px 0 0 -170px;
 	width: 340px;
-	height: 350px;
+	height: 300px;
 }
 
 .morph-button-modal-3.open .morph-content {
