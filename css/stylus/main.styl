@@ -136,6 +136,7 @@ li
 
 .db
     color db
+
 .header
     margin-bottom 40px
     p,a
@@ -147,10 +148,10 @@ li
 
 .sec1
     background url(../../img/bg1.png) 0 0 no-repeat
-    
+
 .sec2
     background-color db
-    
+
 .sec3
     background-color cb
 
@@ -163,6 +164,7 @@ li
     .logo-wrap 
         margin 0
         padding 20px 0
+
 .sec1,
 .sec4
     background-size cover
@@ -182,11 +184,10 @@ li
     margin-top 50px
 .vp
     padding 100px 0
+.vtp
+    padding-top 100px
 
 
-
-// .tel
-//     margin-bottom 50px
 .scroll-down-wrap
     padding-bottom 2px
 
@@ -253,6 +254,7 @@ li
     &:hover
         background-color rgba(255,255,255, 1)
         color db
+
 .morph-button > button
     width 100%
 .row
@@ -589,11 +591,7 @@ li
 
 
 
-@media (max-width: 1280px)
-    .center
-        width 100%
-        padding 50px 5%
-        box-sizing border-box
+
 
 
 
@@ -618,7 +616,7 @@ li
 
 .content-style-form h2 {
     margin: 0;
-    padding: 0.4em 0 0.3em;
+    padding: 0.4em 0 1em;
     text-align: center;
     font-weight: 300;
     font-size: 2em;
@@ -634,14 +632,14 @@ li
     font-size: 0.7em;
 }
 
-.content-style-form label {
-    display: block;
-    padding: 10px 0 0;
-    color: #00455E;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-}
+// .content-style-form label {
+//     display: block;
+//     padding: 10px 0 0;
+//     color: #00455E;
+//     text-transform: uppercase;
+//     letter-spacing: 1px;
+//     font-weight: bold;
+// }
 
 .content-style-form input[type="text"],
 .content-style-form input[type="password"] {
@@ -650,8 +648,8 @@ li
     border: 2px solid #FFC107;
     background: transparent;
     color: #b09a86;
-    font-weight: 300;
-    font-size: 2.2em;
+    // font-weight: 300;
+    font-size: 1.2em;
     box-sizing: border-box;
 }
 
@@ -716,3 +714,187 @@ li
 // .open .morph-content{
 //     display: block
 // }
+
+
+
+
+
+
+
+
+.input {
+    position: relative;
+    z-index: 1;
+    display: block;
+    vertical-align: top;
+    height 43px
+    margin-bottom 2.3em
+}
+
+.input__field {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 0.8em;
+    width: 60%;
+    border: none;
+    border-radius: 0;
+    background: #f0f0f0;
+    color: #aaa;
+    font-weight: 400;
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+    outline: none;
+}
+
+
+
+.input__label-content {
+    position: relative;
+    display: block;
+    padding: 2.5em 1em;
+    width: 100%;
+}
+
+
+
+
+
+
+
+.input__field--chisato {
+    width: 100%;
+    padding: 0.8em 0.5em;
+    background: transparent;
+    border: 2px solid;
+    color: #b5b5b5;
+    -webkit-transition: border-color 0.25s;
+    transition: border-color 0.25s;
+}
+
+.input__label--chisato {
+    width: 100%;
+    position: absolute;
+    top: -1.3em;
+    text-align: left;
+    height 120%
+    overflow: hidden;
+    // padding: 0;
+    pointer-events: none;
+    // -webkit-transform: translate3d(0, 3em, 0);
+    // transform: translate3d(0, 3em, 0);
+}
+
+.input__label-content--chisato {
+    // padding: 0 1em;
+    font-weight: 400;
+    color: #b5b5b5;
+}
+
+.input__label-content--chisato::after {
+    content: attr(data-content);
+    position: absolute;
+    top: -200%;
+    left: 0;
+    color: #007998;
+    font-weight: 800;
+}
+
+.input__field--chisato:focus,
+.input--filled .input__field--chisato {
+    border-color: #da6484;
+}
+
+.input__field--chisato:focus + .input__label--chisato,
+.input--filled .input__label--chisato {
+    -webkit-animation: anim-chisato-1 0.25s forwards;
+    animation: anim-chisato-1 0.25s forwards;
+}
+
+.input__field--chisato:focus + .input__label--chisato .input__label-content--chisato,
+.input--filled .input__label-content--chisato {
+    -webkit-animation: anim-chisato-2 0.25s forwards ease-in;
+    animation: anim-chisato-2 0.25s forwards ease-in;
+}
+
+@-webkit-keyframes anim-chisato-1 {
+    0%, 70% {
+        -webkit-transform: translate3d(0, 3em, 0);
+        transform: translate3d(0, 3em, 0);
+    }
+    71%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@-webkit-keyframes anim-chisato-2 {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    70%, 71% {
+        -webkit-transform: translate3d(0, 125%, 0);
+        transform: translate3d(0, 125%, 0);
+        opacity: 0;
+        -webkit-animation-timing-function: ease-out;
+    }
+    100% {
+        color: transparent;
+        -webkit-transform: translate3d(0, 200%, 0);
+        transform: translate3d(0, 200%, 0);
+    }
+}
+
+@keyframes anim-chisato-1 {
+    0%, 70% {
+        -webkit-transform: translate3d(0, 3em, 0);
+        transform: translate3d(0, 3em, 0);
+    }
+    71%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes anim-chisato-2 {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    70%, 71% {
+        -webkit-transform: translate3d(0, 125%, 0);
+        transform: translate3d(0, 125%, 0);
+        opacity: 0;
+        -webkit-animation-timing-function: ease-out;
+    }
+    100% {
+        color: transparent;
+        -webkit-transform: translate3d(0, 200%, 0);
+        transform: translate3d(0, 200%, 0);
+    }
+}
+
+
+
+
+
+.graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: none;
+}
+
+.icon {
+    color: #ddd;
+    font-size: 150%;
+}
+
+
+
+
+@import media

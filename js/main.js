@@ -5,13 +5,96 @@ $(document).ready(function() {
     //     loopHorizontal: true,
     //     slidesNavigation: true
     // });
+    // form validation 
+    $.validate({
+        showHelpOnFocus: false
+    });
+    //slider
     $('.slider').slick({
         dots: true,
         arrows: false
     });
+    // mandrilla send email function
+    var sendEmail = function(emailTo, theme, msg){
+        $.ajax({
+          "type": "POST",
+          "url": "https://mandrillapp.com/api/1.0/messages/send.json",
+          "data": {
+            "key": "NHi8r1hU9Nla-gHjnit-jg",
+            "message": {
+              "from_email": "site@example.com",
+              "to": [
+                  {
+                    "email": "info@out-sales.ru",
+                    "name": "" + emailTo,
+                    "type": "to"
+                  }
+                ],
+              "autotext": true,
+              "subject": theme + "",
+              "html": msg + ""
+            }
+          }
+         }).done(function(response) {
+           console.log(response);
+         });
+    }
+
+
+
+
+    $(".orderCall .orderCallBtn").click(function(){
+        var customerName = $(".orderCall .customerName").val(),
+            customerPhone = $(".orderCall .customerPhone").val(),
+            msg = customerName + " заказал звонок на номер: " + customerPhone;
+        sendEmail(customerName, "Заказ звонка", msg);
+    });
+
+
+// input form animation
+
+    (function() {
+        // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+        if (!String.prototype.trim) {
+            (function() {
+                // Make sure we trim BOM and NBSP
+                var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                String.prototype.trim = function() {
+                    return this.replace(rtrim, '');
+                };
+            })();
+        }
+
+        [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+            // in case the input is already filled..
+            if( inputEl.value.trim() !== '' ) {
+                classie.add( inputEl.parentNode, 'input--filled' );
+            }
+
+            // events:
+            inputEl.addEventListener( 'focus', onInputFocus );
+            inputEl.addEventListener( 'blur', onInputBlur );
+        } );
+
+        function onInputFocus( ev ) {
+            classie.add( ev.target.parentNode, 'input--filled' );
+        }
+
+        function onInputBlur( ev ) {
+            if( ev.target.value.trim() === '' ) {
+                classie.remove( ev.target.parentNode, 'input--filled' );
+            }
+        }
+    })();
+    
 });
 
+// block animation
+
 new WOW().init();
+
+
+// popup animation
 
 (function() {
     var docElem = window.document.documentElement, didScroll, scrollPosition;
@@ -76,3 +159,5 @@ new WOW().init();
         bttn.addEventListener( 'click', function( ev ) { ev.preventDefault(); } );
     });
 })();
+
+

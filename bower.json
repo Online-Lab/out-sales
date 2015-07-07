@@ -5,6 +5,7 @@
     "fullpage.js": "*",
     "slick.js": "*",
     "wowjs": "*",
-    "normalize.styl": "*"
+    "normalize.styl": "*",
+     "jquery-form-validator" : ">=2.2.1" 
   }
 }
