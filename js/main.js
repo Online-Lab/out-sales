@@ -36,7 +36,7 @@ $(document).ready(function() {
             }
           }
          }).done(function(response) {
-           console.log(response);
+           alert("Ваша заявка принята");
          });
     }
 
@@ -44,10 +44,29 @@ $(document).ready(function() {
 
 
     $(".orderCall .orderCallBtn").click(function(){
-        var customerName = $(".orderCall .customerName").val(),
-            customerPhone = $(".orderCall .customerPhone").val(),
-            msg = customerName + " заказал звонок на номер: " + customerPhone;
-        sendEmail(customerName, "Заказ звонка", msg);
+        var customerName = $(".orderCall .name").val(),
+            phone = $(".orderCall .phone").val(),
+            msg = name + " заказал звонок на номер: " + phone;
+        sendEmail(name, "Заказ звонка", msg);
+    });
+
+
+    $(".leaveApplication .leaveApplicationBtn").click(function(){
+        var name = $(".leaveApplication .name").val(),
+            phone = $(".leaveApplication .phone").val(),
+            email = $(".leaveApplication .email").val(),
+            msg = name + " подал заявку. Контактные данные: " + phone + " "+ email;
+        sendEmail(name, "Заявка", msg);
+    });
+
+    $(".question .questionBtn").click(function(){
+        var name = $(".question .name").val(),
+            phone = $(".question .phone").val(),
+            email = $(".question .email").val(),
+            comment = $(".question .comment").val(),
+
+            msg = name + " задал вопрос. Контактные данные: телефон " + phone + ", емаил "+ email+". Вопрос: "+comment;
+        sendEmail(name, "Вопрос", msg);
     });
 
 

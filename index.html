@@ -6,7 +6,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name='yandex-verification' content='5db9ef37083d31ce' />
+    <meta name='yandex-verification' content='5db9ef37083d31ce'/>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="bower_components/fullpage.js/jquery.fullPage.css">
     <link rel="stylesheet" href="css/component.css">
@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="bower_components/wowjs/css/libs/animate.css">
     <link rel="stylesheet" href="css/build/concat.css">
   </head>
-  <body>
+  <body ng-app = "outSales">
     <!--[if lt IE 8]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="main-wrap" id = "fullpage">
+    <div class="main-wrap" id = "fullpage" ng-controller = "MainCtrl">
 
 
       <section class="section sec1">
@@ -40,7 +40,9 @@
           <div action="" class="btn-wrap">
 
             <div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed wow fadeInLeft" data-wow-delay="0.4s">
+              
               <button type="btn">Заказать <br> звонок</button>
+
               <div class="morph-content">
                 <div>
                   <div class="content-style-form content-style-form-1">
@@ -48,19 +50,21 @@
                     <h2>Заказать звонок</h2>
                     <form class = "orderCall">
                       <span class="input input--chisato">
-                        <input class="input__field input__field--chisato customerName" 
+                        <input class="input__field input__field--chisato name" 
                           type="text" 
                           id="input-13" 
-                          autofocus 
+                          autofocus
+                          required
                         />
                         <label class="input__label input__label--chisato" for="input-13">
                           <span class="input__label-content input__label-content--chisato" data-content = "Имя">Имя</span>
                         </label>
                       </span>
                       <span class="input input--chisato">
-                        <input class="input__field input__field--chisato customerPhone" 
+                        <input class="input__field input__field--chisato phone" 
                           type="text" 
-                          id="input-13" 
+                          id="input-13"
+                          required
                         />
                         <label class="input__label input__label--chisato" for="input-13">
                           <span class="input__label-content input__label-content--chisato" data-content = "Телефон">Телефон</span>
@@ -80,26 +84,30 @@
                   <div class="content-style-form content-style-form-2">
                     <span class="icon icon-close">&times;</span>
                     <h2>Оставить заявку</h2>
-                    <form>
+                    <form class = "leaveApplication">
                       <span class="input input--chisato">
-                        <input class="input__field input__field--chisato" type="text" id="input-13" autofocus/>
+                        <input class="input__field input__field--chisato name" type="text" id="input-13" autofocus/>
                         <label class="input__label input__label--chisato" for="input-13">
                           <span class="input__label-content input__label-content--chisato" data-content = "Имя">Имя</span>
                         </label>
                       </span>
                       <span class="input input--chisato">
-                        <input class="input__field input__field--chisato" type="text" id="input-13" autofocus/>
+                        <input class="input__field input__field--chisato email" 
+                          type="text" 
+                          id="input-13" 
+                          autofocus
+                          />
                         <label class="input__label input__label--chisato" for="input-13">
                           <span class="input__label-content input__label-content--chisato" data-content = "Почта">Почта</span>
                         </label>
                       </span>
                       <span class="input input--chisato">
-                        <input class="input__field input__field--chisato" type="text" id="input-13" autofocus/>
+                        <input class="input__field input__field--chisato phone" type="text" id="input-13" autofocus/>
                         <label class="input__label input__label--chisato" for="input-13">
                           <span class="input__label-content input__label-content--chisato" data-content = "Телефон">Телефон</span>
                         </label>
                       </span>
-                      <p><button class = "sendEmail">Отправить</button></p>
+                      <p><button class = "sendEmail leaveApplicationBtn">Отправить</button></p>
                     </form>
                   </div>
                 </div>
@@ -155,7 +163,7 @@
 
 
       <section class="section sec3">
-        <div class="center vp">
+        <div class="center vtp">
           <p class="title fs6 bigger bl wow fadeInTop">2 стадии увеличения <br>ваших продаж</p>
 
           <p class="fs12">
@@ -209,15 +217,54 @@
             </div>
           </div>
 
-          <div class="row v4 mt50">
+        </div>
 
-            <p class="price fs6_1">12 000 руб.</p>
 
-            <button class = "btn fs6_1">Заказать</button>
+        <div class="row v4 mt50">
 
+          <p class="price fs6_1">12 000 руб.</p>
+
+          <div class="morph-button morph-button-modal morph-button-modal-3 morph-button-fixed wow fadeInRight" data-wow-delay="0.4s">
+            <button type="btn">Заказать</button>
+            <div class="morph-content">
+              <div>
+                <div class="content-style-form content-style-form-2">
+                  <span class="icon icon-close">&times;</span>
+                  <h2>Оставить заявку</h2>
+                  <form class = "leaveApplication">
+                    <span class="input input--chisato">
+                      <input class="input__field input__field--chisato name" type="text" id="input-13" autofocus/>
+                      <label class="input__label input__label--chisato" for="input-13">
+                        <span class="input__label-content input__label-content--chisato" data-content = "Имя">Имя</span>
+                      </label>
+                    </span>
+                    <span class="input input--chisato">
+                      <input class="input__field input__field--chisato email" 
+                        type="text" 
+                        id="input-13" 
+                        autofocus
+                        />
+                      <label class="input__label input__label--chisato" for="input-13">
+                        <span class="input__label-content input__label-content--chisato" data-content = "Почта">Почта</span>
+                      </label>
+                    </span>
+                    <span class="input input--chisato">
+                      <input class="input__field input__field--chisato phone" type="text" id="input-13" autofocus/>
+                      <label class="input__label input__label--chisato" for="input-13">
+                        <span class="input__label-content input__label-content--chisato" data-content = "Телефон">Телефон</span>
+                      </label>
+                    </span>
+                    <p><button class = "sendEmail leaveApplicationBtn">Отправить</button></p>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
 
+        </div>
 
+
+        <div class="center">
           <p class="fs12 mt100">
             <span class="numInCircle">2</span>
             Удаленный отдел продаж
@@ -269,14 +316,49 @@
               </p>
             </div>
           </div>
+        </div>
 
-          <div class="row v4 mt50">
+        <div class="row v4 mt50 vbp">
 
-            <p class="price fs6_1">17 000 руб.</p>
+          <p class="price fs6_1">17 000 руб.</p>
 
-            <button class = "btn fs6_1">Заказать</button>
-
+          <div class="morph-button morph-button-modal morph-button-modal-3 morph-button-fixed wow fadeInRight" data-wow-delay="0.4s">
+            <button type="btn">Заказать</button>
+            <div class="morph-content">
+              <div>
+                <div class="content-style-form content-style-form-2">
+                  <span class="icon icon-close">&times;</span>
+                  <h2>Оставить заявку</h2>
+                  <form class = "leaveApplication">
+                    <span class="input input--chisato">
+                      <input class="input__field input__field--chisato name" type="text" id="input-13" autofocus/>
+                      <label class="input__label input__label--chisato" for="input-13">
+                        <span class="input__label-content input__label-content--chisato" data-content = "Имя">Имя</span>
+                      </label>
+                    </span>
+                    <span class="input input--chisato">
+                      <input class="input__field input__field--chisato email" 
+                        type="text" 
+                        id="input-13" 
+                        autofocus
+                        />
+                      <label class="input__label input__label--chisato" for="input-13">
+                        <span class="input__label-content input__label-content--chisato" data-content = "Почта">Почта</span>
+                      </label>
+                    </span>
+                    <span class="input input--chisato">
+                      <input class="input__field input__field--chisato phone" type="text" id="input-13" autofocus/>
+                      <label class="input__label input__label--chisato" for="input-13">
+                        <span class="input__label-content input__label-content--chisato" data-content = "Телефон">Телефон</span>
+                      </label>
+                    </span>
+                    <p><button class = "sendEmail leaveApplicationBtn">Отправить</button></p>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
         
       </section>
@@ -295,10 +377,10 @@
         </div>
         <p class="fs10 db">Первые 50 звонков бесплатно.</p>
           
-        <form action="" class="app-form center">
+        <form action="" class="app-form center orderCall">
           <input type="text" placeholder = "Ваше имя">
           <input type="text" placeholder = "Ваш телефон">
-          <button class="btn">Оставить <br>заявку</button>
+          <button class="btn orderCallBtn" >Оставить <br>заявку</button>
           <!-- <input type="submit" value = "Оставить заявку"> -->
         </form>
         
@@ -419,10 +501,10 @@
 
           <p class="fs10 ylw mt50" >Первые 50 звонков бесплатно.</p>
 
-          <form action="" class="app-form  mt100">
+          <form action="" class="app-form  mt100 orderCall">
             <input type="text" placeholder = "Ваше имя">
             <input type="text" placeholder = "Ваш телефон">
-            <button class="btn">Оставить <br>заявку</button>
+            <button class="btn orderCallBtn">Оставить <br>заявку</button>
           </form>
 
           <div class="slider mt50">
@@ -474,15 +556,15 @@
             <p class="title fs6 ylw">Ваш вопрос</p>
             <div class="row v1 mt50">
               <div class="cell1_2">
-                <input type="text" placeholder = "Ваше имя"><br>
-                <input type="text" placeholder = "Ваш телефон"><br>
-                <input type="text" placeholder = "Ваш email">
+                <input class = "name" type="text" placeholder = "Ваше имя"><br>
+                <input class = "phone" type="text" placeholder = "Ваш телефон"><br>
+                <input class = "email" type="text" placeholder = "Ваш email">
               </div>
               <div class="cell1_2">
-                <textarea placeholder = "Ваш вопрос" name="" id="" cols="30" rows="10"></textarea>
-                <button class="btn">Оставить <br> заявку</button>
+                <textarea placeholder = "Ваш вопрос" name="" id="" cols="30" rows="10" class = "comment"></textarea>
+                <button class="btn questionBtn">Оставить <br> заявку</button>
               </div>
-            </div>
+            </div> 
           </form>
 
 
@@ -551,10 +633,8 @@
     <script src= "bower_components/wowjs/dist/wow.min.js"></script>
     <script src= "bower_components/jquery-form-validator/form-validator/jquery.form-validator.js"></script>
     <script src= "js/uiMorphingButton_fixed.js"></script>
-
     <script src= "bower_components/slick.js/slick/slick.min.js"></script>
     <script src= "js/classie.js"></script>
-
     <script src="js/main.js"></script>
     
   </body>
