@@ -1,10 +1,9 @@
+@media screen and (min-width: 1200px)
+    .center
+        width 1200px
 @media (max-width: 1280px)
     body
         font-size 11px
-    .center
-        width 100%
-        padding 50px 5%
-        box-sizing border-box
     .vp
         padding 50px 0
     .vtp
@@ -17,3 +16,23 @@
     .morph-button-fixed
         width: 25%
 
+@media (max-width 780px)
+    body
+        font-size 9px
+    .row
+        &.v3
+            justify-content center
+            flex-direction: column
+            margin: 0
+            .img
+                width 10%
+                height 90px
+            .cell1_2
+                width 100%
+        &.v0
+            .img
+                width 60%
+                height 100px
+    .btn-wrap .morph-button-fixed .morph-content, 
+    .btn-wrap .morph-button-fixed
+        width 33%

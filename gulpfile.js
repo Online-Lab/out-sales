@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     stylus = require('gulp-stylus'),
     concat = require('gulp-concat'),
     autoprefixer = require('gulp-autoprefixer'),
+    uglify = require('gulp-uglifyjs'),
     connect = require('gulp-connect-multi')();
 
 
@@ -33,15 +34,18 @@ gulp.task('connect', connect.server({
   }
 }));
 
+
 gulp.task('html', function () {
   gulp.src('*.html')
     .pipe(connect.reload());
 });
 
+
 gulp.task('js', function () {
   gulp.src('*.js')
     .pipe(connect.reload());
 });
+
 
 gulp.task('watch', function(){
     gulp.watch(['css/stylus/*.styl'], ['stylus']);
@@ -50,5 +54,11 @@ gulp.task('watch', function(){
 });
 
 
-gulp.task('default', ['connect', 'stylus', 'watch', 'svgcss'])
+// gulp.task('uglify', function() {
+//   gulp.src(['js/vendor/modernizr-2.8.3.min.js', 'js/jquery-1.11.3.min.js', 'js/classie.js', 'js/jquery.maskedinput.min.js', 'js/uiMorphingButton_fixed.js', 'bower_components/slick.js/slick/slick.min.js', 'bower_components/wowjs/dist/wow.min.js', 'js/main.js'])
+//     .pipe(uglify('app.min.js'))
+//     .pipe(gulp.dest('js/build'))
+// });
+
+gulp.task('default', ['connect', 'stylus', 'watch', 'svgcss']);
 
