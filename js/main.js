@@ -40,7 +40,7 @@ $(document).ready(function() {
          });
     }
 
-
+    $(".phone").mask("+7 (999) 999-99-99",{placeholder:"+7 (___) ___-__-__"});
 
 
     $(".orderCall .orderCallBtn").click(function(){
@@ -65,7 +65,7 @@ $(document).ready(function() {
             email = $(".question .email").val(),
             comment = $(".question .comment").val(),
 
-            msg = name + " задал вопрос. Контактные данные: телефон " + phone + ", емаил "+ email+". Вопрос: "+comment;
+            msg = name + " задал вопрос. Контактные данные: телефон " + phone + ", емаил "+ email+". Вопрос: "+comment  ;
         sendEmail(name, "Вопрос", msg);
     });
 
