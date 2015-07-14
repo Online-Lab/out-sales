@@ -39,43 +39,13 @@
           </div>
           <div action="" class="btn-wrap">
 
-            <div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed wow fadeInLeft" data-wow-delay="0.4s">
-              
-              <button type="btn">Заказать <br> звонок</button>
 
-              <div class="morph-content">
-                <div>
-                  <div class="content-style-form content-style-form-1">
-                    <span class="icon icon-close">&times;</span>
-                    <h2>Заказать звонок</h2>
-                    <form class = "orderCall">
-                      <span class="input input--chisato">
-                        <input class="input__field input__field--chisato name" 
-                          type="text" 
-                          id="input-13" 
-                          autofocus
-                          required
-                        />
-                        <label class="input__label input__label--chisato" for="input-13">
-                          <span class="input__label-content input__label-content--chisato" data-content = "Имя">Имя</span>
-                        </label>
-                      </span>
-                      <span class="input input--chisato">
-                        <input class="input__field input__field--chisato phone" 
-                          type="text" 
-                          id="input-13"
-                          required
-                        />
-                        <label class="input__label input__label--chisato" for="input-13">
-                          <span class="input__label-content input__label-content--chisato" data-content = "Телефон">Телефон</span>
-                        </label>
-                      </span>
-                      <p><button class = "orderCallBtn">Отправить</button></p>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <!-- <button type="btn">Заказать <br> звонок</button> -->
+              <button-popup info = "popup1">
+              </button-popup>
+              <ng-include src="popup1.html">
+              </ng-include>
+
 
             <div class="morph-button morph-button-modal morph-button-modal-3 morph-button-fixed wow fadeInRight" data-wow-delay="0.4s">
               <button type="btn">Оставить <br> заявку</button>
@@ -631,6 +601,7 @@
     <script src= "bower_components/fullpage.js/vendors/jquery.easings.min.js"></script>
     <script src= "bower_components/fullpage.js/vendors/jquery.slimscroll.min.js"></script>
     <script src= "bower_components/wowjs/dist/wow.min.js"></script>
+    <script src= "bower_components/angular/angular.min.js"></script>
     <script src= "bower_components/jquery-form-validator/form-validator/jquery.form-validator.js"></script>
     <script src= "js/uiMorphingButton_fixed.js"></script>
     <script src= "bower_components/slick.js/slick/slick.min.js"></script>

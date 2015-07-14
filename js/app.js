@@ -1,36 +1,42 @@
+'use strict';
+
 angular.module('outSales', [])
 
+
   .factory('Mandrill', ['$http',
-    function($http) {
+    function($http){
 
       var fromEmail = 'out@sales.com';
       var fromName = 'From_site';
       var replyTo = 'out@sales.com';
-      messageWork: function(resp) {
-        return $http.post('https://mandrillapp.com/api/1.0//messages/send.json', {
-          'key': 'NHi8r1hU9Nla-gHjnit-jg',
-          'message': {
-            'html': '<p>Unknown Message</p><p>' + resp + '</p><p>Code:' + resp.messagetext + '</p>',
-            'text': resp,
-            'subject': 'Unknown Message',
-            'from_email': fromEmail,
-            'from_name': fromName,
-            'to': [
-            {
-              'email': resp.toEmail,
-              'name': resp.toName,
-              'type': 'to'
+      return {
+        messageWork: function(resp) {
+          return $http.post('https://mandrillapp.com/api/1.0//messages/send.json', {
+            'key': 'NHi8r1hU9Nla-gHjnit-jg',
+            'message': {
+              'html': '<p>Unknown Message</p><p>' + resp + '</p><p>Code:' + resp.messagetext + '</p>',
+              'text': resp,
+              'subject': 'Unknown Message',
+              'from_email': fromEmail,
+              'from_name': fromName,
+              'to': [
+              {
+                'email': resp.toEmail,
+                'name': resp.toName,
+                'type': 'to'
+              }
+              ],
+              'headers': {
+                'Reply-To': replyTo
+              }
             }
-            ],
-            'headers': {
-              'Reply-To': replyTo
-            }
-          }
-        })
-        .success(function(data, status, headers, config){
-          console.log(data, status, headers, config);
-        });
+          })
+          .success(function(data, status, headers, config){
+            console.log(data, status, headers, config);
+          });
+        }
       }
+      
 
     //   var sendEmail = function(emailTo, theme, msg){
     //     $.ajax({
@@ -56,12 +62,27 @@ angular.module('outSales', [])
     //        console.log(response);
     //      });
     // }
-
-      return {
-        messageWork: messageWork;
-      };
   }])
 
-  .controller("MainCtrl", [ '$scope', function($scope){
+  .directive('buttonPopup', function(){
+    return {
+      scope: {
+        popupInfo: '=info',
+      }, // {} = isolate, true = child, false/undefined = no change
+      restrict: 'EA', // E = Element, A = Attribute, C = Class, M = Comment
+      templateUrl: '../btnPopup.html',
 
-  })]
+      link: function($scope, iElm, iAttrs, controller) {
+
+      }
+    };
+  })
+
+  .controller("MainCtrl", [ '$scope', function($scope){
+    $scope.popup1 = {
+      btnTxt: "Fuck this shit",
+      email: false 
+    }
+  }])
+
+;

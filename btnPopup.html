@@ -1,0 +1,33 @@
+<div class="button-popup-wrap">
+    <button class = "btn" ng-bind = "popupInfo.btnTxt"></button>
+    <div class="curtain"></div>
+    <div class="popupWrap">
+        <form class="popup" ng-submit="sendEmail(customer)">
+            <span class="feild">
+                <input type="text" 
+                    class = "name" 
+                    ng-model = "customer.name"
+                    required
+                >
+            </span>
+            <span class="feild">
+                <input type="tel" 
+                    class = "tel"
+                    ng-model = "customer.tel"
+                    required
+                >
+            </span>
+            <span class="feild" ng-show = "popupInfo.email">
+                <input type="email" 
+                    class = "email" 
+                    ng-model = "customer.email"
+                    required
+                >
+            </span>
+            <span class="feild">
+                <input type="submit" class = "submit">
+            </span>
+        </form>
+    </div>
+    
+</div>
