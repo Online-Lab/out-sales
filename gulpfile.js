@@ -1,9 +1,11 @@
-var gulp = require('gulp'),
-    stylus = require('gulp-stylus'),
-    concat = require('gulp-concat'),
-    autoprefixer = require('gulp-autoprefixer'),
-    uglify = require('gulp-uglifyjs'),
-    connect = require('gulp-connect-multi')();
+var gulp          = require('gulp'),
+    stylus        = require('gulp-stylus'),
+    concat        = require('gulp-concat'),
+    autoprefixer  = require('gulp-autoprefixer'),
+    uglify        = require('gulp-uglifyjs'),
+    order         = require('gulp-order'),
+    print         = require('gulp-print');
+    connect       = require('gulp-connect-multi')();
 
 
 
@@ -54,11 +56,26 @@ gulp.task('watch', function(){
 });
 
 
-// gulp.task('uglify', function() {
-//   gulp.src(['js/vendor/modernizr-2.8.3.min.js', 'js/jquery-1.11.3.min.js', 'js/classie.js', 'js/jquery.maskedinput.min.js', 'js/uiMorphingButton_fixed.js', 'bower_components/slick.js/slick/slick.min.js', 'bower_components/wowjs/dist/wow.min.js', 'js/main.js'])
-//     .pipe(uglify('app.min.js'))
-//     .pipe(gulp.dest('js/build'))
-// });
+gulp.task('uglify', function() {
+  gulp.src(['js/*.js', 
+    'js/vendor/*.js',
+    'bower_components/slick.js/slick/slick.min.js',
+    'bower_components/wowjs/dist/wow.min.js'])
+    .pipe(order([
+        'js/vendor/modernizr-2.8.3.min.js', 
+        'js/vendor/jquery-1.11.3.min.js', 
+        'bower_components/slick.js/slick/slick.min.js', 
+        'bower_components/wowjs/dist/wow.min.js', 
+        'js/classie.js',
+        'js/jquery.maskedinput.min.js',
+        'js/uiMorphingButton_fixed.js',
+        'js/main.js'
+      ], { base: './' }))
+    .pipe(print())
+    .pipe(concat('scripts.min.js'))
+    .pipe(uglify({mangle: false}))
+    .pipe(gulp.dest('js/build'))
+});
 
-gulp.task('default', ['connect', 'stylus', 'watch', 'svgcss']);
+gulp.task('default', ['connect', 'stylus', 'watch', 'svgcss', 'uglify']);
 
