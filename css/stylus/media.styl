@@ -15,11 +15,55 @@
     .morph-button-fixed .morph-content,
     .morph-button-fixed
         width: 25%
+    .row
+        &.v4
+            .morph-button-fixed .morph-content,
+            .morph-button-fixed
+                width: 25%
 
 @media (max-width 780px)
     body
-        font-size 9px
+        font-size 8px
+    input,
+    textarea,
+    .btn
+        font-size txt20
+    .logo-wrap
+        margin-bottom: 50px
+    .fs8
+        font-size txt40
+    .fs10
+        margin 30px 0
+    .fs11
+        margin 30px 0
+        font-size txt24
+    .article
+        width 80%
+        p
+            font-size txt14
+    .header
+        margin-top 20px
     .row
+        &.v1
+            justify-content center
+            flex-direction: column
+            .cell1_2
+                width 100%
+                &:first-child 
+                    text-align left
+                    .img
+                        float left
+                .img
+                    width 19%
+                    height 70px
+                input, textarea, .btn
+                    width 250px
+                    margin auto
+                    display block
+                    margin-bottom 20px
+        &.v2
+            .img
+                height 70px
         &.v3
             justify-content center
             flex-direction: column
@@ -36,3 +80,19 @@
     .btn-wrap .morph-button-fixed .morph-content, 
     .btn-wrap .morph-button-fixed
         width 33%
+    .orderCall 
+        input
+            display block
+            margin auto
+            margin-bottom 20px
+        &.center
+            padding 0
+    .vbp
+        padding-bottom 20px
+    .center
+        padding 20px 5%
+    .mt50,
+    .mt100
+        margin-top 20px
+        
+// @media (max-width 480px)

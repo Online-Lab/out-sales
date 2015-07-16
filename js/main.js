@@ -1,8 +1,4 @@
 ;$(document).ready(function() {
-    // form validation 
-    $.validate({
-        showHelpOnFocus: false
-    });
     //slider
     $('.slider').slick({
         dots: true,
