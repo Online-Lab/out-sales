@@ -1,9 +1,6 @@
 @import slick
-// @import component
-@import animate
-@import content
-
 @import mixins
+@import animate
 @import variables
 
 body
@@ -909,6 +906,37 @@ li
     font-size: 150%;
 }
 
+
+.ngdialog-content
+    position fixed
+    width 20%
+    display table
+    background-color transparent
+    // height 300px
+    center()   
+
+form.popup
+    padding 30px 25px
+    border-radius 10px
+    background white
+    input[type="submit"]
+        width 100%
+        background ylw
+        height 40px
+        border 0
+        text-transform uppercase
+
+.ngdialog-close
+    position: absolute
+    top: 0;
+    right 0
+    display inline-block
+    width 20px
+    height 20px
+    &::before
+        color red
+        font-size 20px
+    
 
 
 
