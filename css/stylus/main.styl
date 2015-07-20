@@ -1,9 +1,6 @@
 @import slick
-// @import component
-@import animate
-@import content
-
 @import mixins
+@import animate
 @import variables
 
 body
@@ -161,10 +158,13 @@ li
 
 .sec2
     background-color db
+    background-image: url(../../img/bg1-1.png)
+    background-size cover
 
 .sec3
     background-color cb
-
+    background-image: url(../../img/bg2.png)
+    background-size cover
 .sec4
     background url(../../img/bg2.jpg) 0 0 no-repeat
 
@@ -174,11 +174,16 @@ li
     .logo-wrap 
         margin 0
         padding 20px 0
+        
+.sec6
+    background-color cb
+    background-image: url(../../img/bg3.png)
+    background-size cover
 
 .sec1,
 .sec4
     background-size cover
-    background-position center bottom
+    background-position center 8%
 .ylw
     color ylw
 .bl
@@ -203,7 +208,7 @@ li
 
 
 .scroll-down-wrap
-    padding-bottom 2px
+    padding-bottom 20px
 
 .scroll-down
     cursor: pointer;
@@ -743,6 +748,7 @@ li
     display: block;
     vertical-align: top;
     height 43px
+    font-size txt11
     margin-bottom 2.3em
 }
 
@@ -759,10 +765,6 @@ li
     font-weight: 400;
     font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-appearance: none; /* for box shadows to show on iOS */
-}
-
-.input__field:focus {
-    outline: none;
 }
 
 
@@ -782,7 +784,7 @@ li
 
 .input__field--chisato {
     width: 100%;
-    padding: 0.8em 0.5em;
+    padding: 0.5em 0.5em;
     background: transparent;
     border: 2px solid;
     color: #b5b5b5;
@@ -793,7 +795,7 @@ li
 .input__label--chisato {
     width: 100%;
     position: absolute;
-    top: -1.3em;
+    top: -1.7em;
     text-align: left;
     height 120%
     overflow: hidden;
@@ -818,10 +820,10 @@ li
     font-weight: 800;
 }
 
-.input__field--chisato:focus,
-.input--filled .input__field--chisato {
-    border-color: #da6484;
-}
+// .input__field--chisato:focus,
+// .input--filled .input__field--chisato {
+//     border-color: #da6484;
+// }
 
 .input__field--chisato:focus + .input__label--chisato,
 .input--filled .input__label--chisato {
@@ -897,20 +899,55 @@ li
 
 
 
-.graphic {
-    position: absolute;
+.ngdialog-content
+    position fixed
+    width 20%
+    display table
+    background-color transparent
+    // height 300px
+    center()   
+
+form.popup
+    padding 35px 25px 20px 25px
+    border-radius 10px
+    background white
+    button,
+    input[type="submit"]
+        width 100%
+        background ylw
+        height 40px
+        border 0
+        text-transform uppercase
+        &:disabled
+            background-color #aaa
+.confirmPopup .ngdialog-content
+    background-color #fff
+    padding 10px
+    color #000
+    text-align center
+    border-radius 10px
+
+.ngdialog-close
+    position: absolute
     top: 0;
-    left: 0;
-    fill: none;
-}
+    right 0
+    display inline-block
+    width 20px
+    height 20px
+    &::before
+        color red
+        font-size 20px
+    
+// .ng-invalid,
+.ng-invalid-minlength
+    border-color red!important
 
-.icon {
-    color: #ddd;
-    font-size: 150%;
-}
-
-
-
-
-
+// .ng-valid,
+.ng-valid
+    border-color green!important
+    
+.sended
+    color #000
+    text-align center
+    
 @import media
