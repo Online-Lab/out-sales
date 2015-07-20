@@ -6,7 +6,6 @@
     "wowjs": "*",
     "normalize.styl": "*",
     "angular": "~1.4.2",
-    "ngDialog": "~0.4.0",
-    "angular-mask": "~3.0.12"
+    "ngDialog": "~0.4.0"
   }
 }
