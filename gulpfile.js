@@ -60,16 +60,20 @@ gulp.task('uglify', function() {
   gulp.src(['js/*.js', 
     'js/vendor/*.js',
     'bower_components/slick.js/slick/slick.min.js',
+    // 'bower_components/angular/angular.min.js',
+    // 'bower_components/ngDialog/js/ngDialog.min.js',
     'bower_components/wowjs/dist/wow.min.js'])
     .pipe(order([
         'js/vendor/modernizr-2.8.3.min.js', 
         'js/vendor/jquery-1.11.3.min.js', 
         'bower_components/slick.js/slick/slick.min.js', 
         'bower_components/wowjs/dist/wow.min.js', 
+        // 'bower_components/angular/angular.min.js',
+        // 'bower_components/ngDialog/js/ngDialog.min.js',
         'js/classie.js',
         'js/jquery.maskedinput.min.js',
-        'js/uiMorphingButton_fixed.js',
         'js/main.js'
+        // 'app.js'
       ], { base: './' }))
     .pipe(print())
     .pipe(concat('scripts.min.js'))

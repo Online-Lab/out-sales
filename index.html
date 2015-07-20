@@ -10,11 +10,11 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   </head>
-  <body>
+  <body ng-app = "outSales">
     <!--[if lt IE 8]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="main-wrap" >
+    <div class="main-wrap" ng-controller="mainCtrl">
 
 
       <section class="section sec1">
@@ -37,83 +37,9 @@
           </div>
           <div action="" class="btn-wrap">
 
-            <div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed wow fadeInLeft" data-wow-delay="0.4s">
-              
-              <button type="btn">Заказать <br> звонок</button>
+            <button class = "wow fadeInLeft btn"  type="btn" ng-click = "openOrderCallPopup()" data-wow-delay="0.4s">Заказать <br> звонок</button>
 
-              <div class="morph-content">
-                <div>
-                  <div class="content-style-form content-style-form-1">
-                    <span class="icon icon-close">&times;</span>
-                    <h2>Заказать звонок</h2>
-                    <form class = "orderCall">
-                      <span class="input input--chisato">
-                        <input class="input__field input__field--chisato name" 
-                          type="text" 
-                          id="input-13" 
-                          autofocus
-                          required
-                        />
-                        <label class="input__label input__label--chisato" for="input-13">
-                          <span class="input__label-content input__label-content--chisato" data-content = "Имя">Имя</span>
-                        </label>
-                      </span>
-                      <span class="input input--chisato">
-                        <input class="input__field input__field--chisato phone" 
-                          type="text" 
-                          id="input-14"
-                          required
-                        />
-                        <label class="input__label input__label--chisato" for="input-14">
-                          <span class="input__label-content input__label-content--chisato phone" data-content = "Телефон">Телефон</span>
-                        </label>
-                      </span>
-                      <p><button class = "orderCallBtn">Отправить</button></p>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="morph-button morph-button-modal morph-button-modal-3 morph-button-fixed wow fadeInRight" data-wow-delay="0.4s">
-              <button type="btn">Оставить <br> заявку</button>
-              <div class="morph-content">
-                <div>
-                  <div class="content-style-form content-style-form-2">
-                    <span class="icon icon-close">&times;</span>
-                    <h2>Оставить заявку</h2>
-                    <form class = "leaveApplication">
-                      <span class="input input--chisato">
-                        <input class="input__field input__field--chisato name" type="text" id="input-15" autofocus/>
-                        <label class="input__label input__label--chisato" for="input-15">
-                          <span class="input__label-content input__label-content--chisato" data-content = "Имя">Имя</span>
-                        </label>
-                      </span>
-                      <span class="input input--chisato">
-                        <input class="input__field input__field--chisato email" 
-                          type="text" 
-                          id="input-16" 
-                          autofocus
-                          />
-                        <label class="input__label input__label--chisato" for="input-16">
-                          <span class="input__label-content input__label-content--chisato" data-content = "Почта">Почта</span>
-                        </label>
-                      </span>
-                      <span class="input input--chisato">
-                        <input class="input__field input__field--chisato phone" 
-                          type="text" 
-                          id="input-17" 
-                        />
-                        <label class="input__label input__label--chisato" for="input-17">
-                          <span class="input__label-content input__label-content--chisato " data-content = "Телефон">Телефон</span>
-                        </label>
-                      </span>
-                      <p><button class = "sendEmail leaveApplicationBtn">Отправить</button></p>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <button class = "wow fadeInRight btn" type="btn" ng-click = "openLeaveApplication()" data-wow-delay="0.4s">Оставить <br> заявку</button>
 
           </div>
           <div class="scroll-down-wrap">
@@ -224,42 +150,8 @@
 
           <p class="price fs6_1 wow fadeInLeft" data-wow-delay="0.4s">12 000 руб.</p>
 
-          <div class="morph-button morph-button-modal morph-button-modal-3 morph-button-fixed wow fadeInRight" data-wow-delay="0.4s">
-            <button type="btn">Заказать</button>
-            <div class="morph-content">
-              <div>
-                <div class="content-style-form content-style-form-2">
-                  <span class="icon icon-close">&times;</span>
-                  <h2>Оставить заявку</h2>
-                  <form class = "leaveApplication">
-                    <span class="input input--chisato">
-                      <input class="input__field input__field--chisato name" type="text" id="input-18" />
-                      <label class="input__label input__label--chisato" for="input-18">
-                        <span class="input__label-content input__label-content--chisato" data-content = "Имя">Имя</span>
-                      </label>
-                    </span>
-                    <span class="input input--chisato">
-                      <input class="input__field input__field--chisato email" 
-                        type="text" 
-                        id="input-19" 
-                        
-                        />
-                      <label class="input__label input__label--chisato" for="input-19">
-                        <span class="input__label-content input__label-content--chisato" data-content = "Почта">Почта</span>
-                      </label>
-                    </span>
-                    <span class="input input--chisato">
-                      <input class="input__field input__field--chisato phone" type="text" id="input-20" />
-                      <label class="input__label input__label--chisato" for="input-20">
-                        <span class="input__label-content input__label-content--chisato " data-content = "Телефон">Телефон</span>
-                      </label>
-                    </span>
-                    <p><button class = "sendEmail leaveApplicationBtn">Отправить</button></p>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+          <button class = "wow fadeInRight btn" type="btn" ng-click = "openLeaveApplication()" data-wow-delay="0.4s">Оставить <br> заявку</button>
+
 
         </div>
 
@@ -322,47 +214,7 @@
 
           <p class="price fs6_1 wow fadeInLeft" data-wow-delay="0.4s">17 000 руб.</p>
 
-          <div class="morph-button morph-button-modal morph-button-modal-3 morph-button-fixed wow fadeInRight" data-wow-delay="0.4s">
-            <button type="btn">Заказать</button>
-            <div class="morph-content">
-              <div>
-                <div class="content-style-form content-style-form-2">
-                  <span class="icon icon-close">&times;</span>
-                  <h2>Оставить заявку</h2>
-                  <form class = "leaveApplication">
-                    <span class="input input--chisato">
-                      <input class="input__field input__field--chisato name" 
-                        type="text" 
-                        id="input-21" 
-                       />
-                      <label class="input__label input__label--chisato" for="input-21">
-                        <span class="input__label-content input__label-content--chisato" data-content = "Имя">Имя</span>
-                      </label>
-                    </span>
-                    <span class="input input--chisato">
-                      <input class="input__field input__field--chisato email" 
-                        type="text" 
-                        id="input-22" 
-                      />
-                      <label class="input__label input__label--chisato" for="input-22">
-                        <span class="input__label-content input__label-content--chisato" data-content = "Почта">Почта</span>
-                      </label>
-                    </span>
-                    <span class="input input--chisato">
-                      <input class="input__field input__field--chisato phone" 
-                        type="text" 
-                        id="input-23"
-                      />
-                      <label class="input__label input__label--chisato" for="input-23">
-                        <span class="input__label-content input__label-content--chisato " data-content = "Телефон">Телефон</span>
-                      </label>
-                    </span>
-                    <p><button class = "sendEmail leaveApplicationBtn">Отправить</button></p>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+          <button class = "wow fadeInRight btn" type="btn" ng-click = "openLeaveApplication()" data-wow-delay="0.4s">Оставить <br> заявку</button>
 
         </div>
       </section>
@@ -380,17 +232,38 @@
           </div>
         </div>
         <p class="fs10 db">Первые 50 звонков бесплатно.</p>
-          
-        <form action="" class="app-form center orderCall">
-          <input type="text" placeholder = "Ваше имя">
-          <input type="text" placeholder = "Ваш телефон">
-          <button class="btn orderCallBtn" >Оставить <br> заявку</button>
-          <!-- <input type="submit" value = "Оставить <br> заявку"> -->
+
+
+        
+        <form class="app-form center orderCall" name = "leaveApplicationMini" novalidate ng-controller="leaveApplicationMiniCtrl">
+          <input type="text" 
+            placeholder = "Ваше имя"
+            ng-model = "leaveApplicationMiniData.name"
+            required
+          >
+          <input type="tel" 
+            placeholder = "Ваш телефон"
+            ng-model = "leaveApplicationMiniData.phone"
+            mask
+            ng-minlength = "18"
+            required
+          >
+          <button class="btn orderCallBtn" 
+            ng-disabled="leaveApplicationMini.$invalid && leaveApplicationMini.$invalid"
+            ng-click = "leaveApplicationMiniSend(leaveApplicationMiniData)"
+            >Оставить <br> заявку</button>
+
         </form>
+
+
+
+
+
+        
       </section>
 
 
-      <section class="section sec3 vp">
+      <section class="section sec6 vp">
         
 
         <div class="v1 center">
@@ -501,11 +374,29 @@
 
           <p class="fs10 ylw" >Первые 50 звонков бесплатно.</p>
 
-          <form action="" class="app-form  mt100 orderCall">
-            <input type="text" placeholder = "Ваше имя">
-            <input type="text" placeholder = "Ваш телефон">
-            <button class="btn orderCallBtn">Оставить <br> заявку</button>
+
+
+          <form class="app-form mt100 orderCall" name = "leaveApplicationMini" novalidate ng-controller="leaveApplicationMiniCtrl">
+            <input type="text" 
+              placeholder = "Ваше имя"
+              ng-model = "leaveApplicationMiniData.name"
+              required
+            >
+            <input type="tel" 
+              placeholder = "Ваш телефон"
+              ng-model = "leaveApplicationMiniData.phone"
+              mask
+              ng-minlength = "18"
+              required
+            >
+            <button class="btn orderCallBtn" 
+              ng-disabled="leaveApplicationMini.$invalid && leaveApplicationMini.$invalid"
+              ng-click = "leaveApplicationMiniSend(leaveApplicationMiniData)"
+              >Оставить <br> заявку</button>
+
           </form>
+
+
 
           <div class="slider mt50">
             <div class="slide" id="1slide0">
@@ -550,17 +441,44 @@
             </div>
           </div>
 
-          <form action="" class="question mt50">
+          <form class="question mt50" ng-controller = "questionFormCtrl" name = "questionForm" novalidate>
             <p class="title fs6 ylw">Ваш вопрос</p>
             <div class="row v1 mt50">
               <div class="cell1_2">
-                <input class = "name" type="text" placeholder = "Ваше имя"><br>
-                <input class = "phone" type="text" placeholder = "Ваш телефон"><br>
-                <input class = "email" type="text" placeholder = "Ваш email">
+
+                <input type="text" 
+                  placeholder = "Ваше имя"
+                  class = "name"
+                  ng-model = "questionFormData.name"
+                  required
+                ><br>
+
+                <input type="tel" 
+                  placeholder = "Ваш телефон"
+                  class = "phone"
+                  ng-model = "questionFormData.phone"
+                  mask
+                  ng-minlength = "18"
+                  required
+                ><br>
+
+                <input type="email" 
+                  placeholder = "Ваш email" 
+                  class = "email" 
+                  ng-model = "questionFormData.email" 
+                  required
+                >
               </div>
               <div class="cell1_2">
-                <textarea placeholder = "Ваш вопрос" name="" id="" cols="30" rows="10" class = "comment"></textarea>
-                <button class="btn questionBtn">Оставить  заявку</button>
+                <textarea placeholder = "Ваш вопрос" 
+                  cols="30" 
+                  rows="10" 
+                  class = "comment"
+                  ng-model = "questionFormData.question" 
+                  required
+                ></textarea>
+                <button class="btn" ng-disabled="questionForm.$invalid && questionForm.$invalid"
+                  ng-click = "questionFormSend(questionFormData)">Оставить  заявку</button>
               </div>
             </div> 
           </form>
@@ -591,36 +509,24 @@
 
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-          try {
-            w.yaCounter31164566 = new Ya.Metrika({
-              id:31164566,
-              clickmap:true,
-              trackLinks:true,
-              accurateTrackBounce:true,
-              webvisor:true
-            });
-          } catch(e) { }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-          s = d.createElement("script"),
-          f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-        if (w.opera == "[object Opera]") {
-          d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-      })(document, window, "yandex_metrika_callbacks");
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/31164566" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    
     <!-- /Yandex.Metrika counter -->
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-default.min.css">
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-plain.css">
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.min.css">
     <link rel="stylesheet" href="css/build/concat.css">
     <script src="js/build/scripts.min.js"></script>
-    
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/ngDialog/js/ngDialog.min.js"></script>
+    <!-- // <script src="bower_components/angular-mask/dist/ngMask.min.js"></script> -->
+    <script src="js/build/app.js"></script>
+
+    <script type="text/ng-template" id="confirmPopup">
+        <p>Ваша заявка принята!!! <br> Ждите обратного звонка.</p>
+    </script>
+
+    <script type="text/ng-template" id="questionResponse">
+        <p>Ваш Вопрос принят на рассмотрение. Ждите уведомления.</p>
+    </script>
   </body>
 </html>

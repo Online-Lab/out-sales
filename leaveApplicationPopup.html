@@ -1,0 +1,67 @@
+<form class = "popup" type = "" ng-controller = "leaveApplicationCtrl" name = "leaveApplication" novalidate>
+
+
+  <div ng-hide = "sended">
+
+    <span class="input input--chisato" 
+      ng-class = "{'input--filled': leaveApplicationData.name.length!==0}"
+    >
+
+      <input type="text" 
+        class="input__field input__field--chisato name" 
+        id="input-13" 
+        ng-model = "leaveApplicationData.name"
+        ng-minlength = "2"
+        required
+        autofocus
+      />
+
+      <label class="input__label input__label--chisato" for="input-13">
+        <span class="input__label-content input__label-content--chisato" data-content = "Имя">Имя</span>
+      </label>
+    </span>
+
+
+    <span class="input input--chisato" ng-class = "{'input--filled':leaveApplicationData.phone.length!==0}">
+
+      <input class="input__field input__field--chisato phone" 
+        type="tel" 
+        id="input-14"
+        ng-model = "leaveApplicationData.phone"
+        mask
+        ng-minlength = "18"
+        required
+      />
+
+      <label class="input__label input__label--chisato" for="input-15">
+        <span class="input__label-content input__label-content--chisato phone" data-content = "Телефон">Телефон</span>
+      </label>
+
+    </span>
+
+
+    <span class="input input--chisato" ng-class = "{'input--filled':leaveApplicationData.email.length!==0}">
+
+      <input class="input__field input__field--chisato phone" 
+        type="email" 
+        id="input-15"
+        ng-model = "leaveApplicationData.email"
+        required
+      />
+
+      <label class="input__label input__label--chisato" for="input-14">
+        <span class="input__label-content input__label-content--chisato phone" data-content = "E-mail">E-mail</span>
+      </label>
+
+    </span>
+
+
+    <button ng-disabled="leaveApplication.$invalid && leaveApplication.$invalid"
+      ng-click = "leaveApplicationSend(leaveApplicationData)">отправить</button>
+  </div>
+  <div ng-show = "sended" class = "sended">
+    Ваша заявка принята! <br>
+    Ждите звонка!!!
+  </div>
+  
+</form>
