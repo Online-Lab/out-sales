@@ -8,6 +8,7 @@
     "normalize.styl": "*",
     "jquery-form-validator": ">=2.2.1",
     "angular": "~1.4.2",
-    "ngDialog": "~0.4.0"
+    "ngDialog": "~0.4.0",
+    "angular-mask": "~3.0.12"
   }
 }

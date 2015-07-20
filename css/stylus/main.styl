@@ -740,6 +740,7 @@ li
     display: block;
     vertical-align: top;
     height 43px
+    font-size txt11
     margin-bottom 2.3em
 }
 
@@ -756,10 +757,6 @@ li
     font-weight: 400;
     font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-appearance: none; /* for box shadows to show on iOS */
-}
-
-.input__field:focus {
-    outline: none;
 }
 
 
@@ -779,7 +776,7 @@ li
 
 .input__field--chisato {
     width: 100%;
-    padding: 0.8em 0.5em;
+    padding: 0.5em 0.5em;
     background: transparent;
     border: 2px solid;
     color: #b5b5b5;
@@ -790,7 +787,7 @@ li
 .input__label--chisato {
     width: 100%;
     position: absolute;
-    top: -1.3em;
+    top: -1.7em;
     text-align: left;
     height 120%
     overflow: hidden;
@@ -815,10 +812,10 @@ li
     font-weight: 800;
 }
 
-.input__field--chisato:focus,
-.input--filled .input__field--chisato {
-    border-color: #da6484;
-}
+// .input__field--chisato:focus,
+// .input--filled .input__field--chisato {
+//     border-color: #da6484;
+// }
 
 .input__field--chisato:focus + .input__label--chisato,
 .input--filled .input__label--chisato {
@@ -894,19 +891,6 @@ li
 
 
 
-.graphic {
-    position: absolute;
-    top: 0;
-    left: 0;
-    fill: none;
-}
-
-.icon {
-    color: #ddd;
-    font-size: 150%;
-}
-
-
 .ngdialog-content
     position fixed
     width 20%
@@ -916,7 +900,7 @@ li
     center()   
 
 form.popup
-    padding 30px 25px
+    padding 35px 25px
     border-radius 10px
     background white
     input[type="submit"]
@@ -925,6 +909,8 @@ form.popup
         height 40px
         border 0
         text-transform uppercase
+        &:disabled
+            background-color #aaa
 
 .ngdialog-close
     position: absolute
@@ -937,8 +923,12 @@ form.popup
         color red
         font-size 20px
     
+.ng-invalid,
+.ng-invalid-minlength
+    border-color red!important
 
-
-
-
+// .ng-valid,
+.ng-valid
+    border-color green!important
+    
 @import media

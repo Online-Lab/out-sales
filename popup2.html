@@ -1,4 +1,4 @@
-<form class = "popup" ng-controller="popupCtrl" type = "" ng-submit = "sendToMail()">
+<form class = "popup" type = "" ng-controller = "popupCtrl">
   <span class="input input--chisato">
     <input class="input__field input__field--chisato name" 
       type="text" 
@@ -13,9 +13,9 @@
   </span>
   <span class="input input--chisato">
     <input class="input__field input__field--chisato phone" 
-      type="text" 
+      type="tel" 
       id="input-14"
-      mg-model = "user.phone"
+      ng-model = "user.phone"
       required
     />
     <label class="input__label input__label--chisato" for="input-14">
@@ -33,5 +33,5 @@
       <span class="input__label-content input__label-content--chisato phone" data-content = "Почта">Почта</span>
     </label>
   </span>
-  <input type="submit" value = "отправить">
+  <input type="submit" value = "отправить" ng-click = "sendEmail()">
 </form>

@@ -37,7 +37,7 @@
           </div>
           <div action="" class="btn-wrap">
 
-            <button class = "wow fadeInLeft btn"  type="btn" ng-click = "openPopup(orderCall)" data-wow-delay="0.4s">Заказать <br> звонок</button>
+            <button class = "wow fadeInLeft btn"  type="btn" ng-click = "openOrderCallPopup()" data-wow-delay="0.4s">Заказать <br> звонок</button>
 
             <button class = "wow fadeInRight btn" type="btn" ng-click = "openPopup(leaveApplication)" data-wow-delay="0.4s">Оставить <br> заявку</button>
 
@@ -443,33 +443,7 @@
 
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-          try {
-            w.yaCounter31164566 = new Ya.Metrika({
-              id:31164566,
-              clickmap:true,
-              trackLinks:true,
-              accurateTrackBounce:true,
-              webvisor:true
-            });
-          } catch(e) { }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-          s = d.createElement("script"),
-          f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-        if (w.opera == "[object Opera]") {
-          d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-      })(document, window, "yandex_metrika_callbacks");
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/31164566" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    
     <!-- /Yandex.Metrika counter -->
     <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-default.min.css">
     <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-plain.css">
@@ -478,6 +452,7 @@
     <script src="js/build/scripts.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/ngDialog/js/ngDialog.min.js"></script>
-    <script src="js/app.js"></script>
+    <!-- // <script src="bower_components/angular-mask/dist/ngMask.min.js"></script> -->
+    <script src="js/build/app.js"></script>
   </body>
 </html>
