@@ -39,7 +39,7 @@
 
             <button class = "wow fadeInLeft btn"  type="btn" ng-click = "openOrderCallPopup()" data-wow-delay="0.4s">Заказать <br> звонок</button>
 
-            <button class = "wow fadeInRight btn" type="btn" ng-click = "openPopup(leaveApplication)" data-wow-delay="0.4s">Оставить <br> заявку</button>
+            <button class = "wow fadeInRight btn" type="btn" ng-click = "openLeaveApplication()" data-wow-delay="0.4s">Оставить <br> заявку</button>
 
           </div>
           <div class="scroll-down-wrap">
@@ -150,7 +150,7 @@
 
           <p class="price fs6_1 wow fadeInLeft" data-wow-delay="0.4s">12 000 руб.</p>
 
-          <button class = "wow fadeInRight btn" type="btn" ng-click = "openPopup(leaveApplication)" data-wow-delay="0.4s">Оставить <br> заявку</button>
+          <button class = "wow fadeInRight btn" type="btn" ng-click = "openLeaveApplication()" data-wow-delay="0.4s">Оставить <br> заявку</button>
 
 
         </div>
@@ -214,7 +214,7 @@
 
           <p class="price fs6_1 wow fadeInLeft" data-wow-delay="0.4s">17 000 руб.</p>
 
-          <button class = "wow fadeInRight btn" type="btn" ng-click = "openPopup(leaveApplication)" data-wow-delay="0.4s">Оставить <br> заявку</button>
+          <button class = "wow fadeInRight btn" type="btn" ng-click = "openLeaveApplication()" data-wow-delay="0.4s">Оставить <br> заявку</button>
 
         </div>
       </section>
@@ -232,17 +232,38 @@
           </div>
         </div>
         <p class="fs10 db">Первые 50 звонков бесплатно.</p>
-          
-        <form action="" class="app-form center orderCall">
-          <input type="text" placeholder = "Ваше имя">
-          <input type="text" placeholder = "Ваш телефон">
-          <button class="btn orderCallBtn" >Оставить <br> заявку</button>
-          <!-- <input type="submit" value = "Оставить <br> заявку"> -->
+
+
+        
+        <form class="app-form center orderCall" name = "leaveApplicationMini" novalidate ng-controller="leaveApplicationMiniCtrl">
+          <input type="text" 
+            placeholder = "Ваше имя"
+            ng-model = "leaveApplicationMiniData.name"
+            required
+          >
+          <input type="tel" 
+            placeholder = "Ваш телефон"
+            ng-model = "leaveApplicationMiniData.phone"
+            mask
+            ng-minlength = "18"
+            required
+          >
+          <button class="btn orderCallBtn" 
+            ng-disabled="leaveApplicationMini.$invalid && leaveApplicationMini.$invalid"
+            ng-click = "leaveApplicationMiniSend(leaveApplicationMiniData)"
+            >Оставить <br> заявку</button>
+
         </form>
+
+
+
+
+
+        
       </section>
 
 
-      <section class="section sec3 vp">
+      <section class="section sec6 vp">
         
 
         <div class="v1 center">
@@ -353,11 +374,29 @@
 
           <p class="fs10 ylw" >Первые 50 звонков бесплатно.</p>
 
-          <form action="" class="app-form  mt100 orderCall">
-            <input type="text" placeholder = "Ваше имя">
-            <input type="text" placeholder = "Ваш телефон">
-            <button class="btn orderCallBtn">Оставить <br> заявку</button>
+
+
+          <form class="app-form mt100 orderCall" name = "leaveApplicationMini" novalidate ng-controller="leaveApplicationMiniCtrl">
+            <input type="text" 
+              placeholder = "Ваше имя"
+              ng-model = "leaveApplicationMiniData.name"
+              required
+            >
+            <input type="tel" 
+              placeholder = "Ваш телефон"
+              ng-model = "leaveApplicationMiniData.phone"
+              mask
+              ng-minlength = "18"
+              required
+            >
+            <button class="btn orderCallBtn" 
+              ng-disabled="leaveApplicationMini.$invalid && leaveApplicationMini.$invalid"
+              ng-click = "leaveApplicationMiniSend(leaveApplicationMiniData)"
+              >Оставить <br> заявку</button>
+
           </form>
+
+
 
           <div class="slider mt50">
             <div class="slide" id="1slide0">
@@ -402,17 +441,44 @@
             </div>
           </div>
 
-          <form action="" class="question mt50">
+          <form class="question mt50" ng-controller = "questionFormCtrl" name = "questionForm" novalidate>
             <p class="title fs6 ylw">Ваш вопрос</p>
             <div class="row v1 mt50">
               <div class="cell1_2">
-                <input class = "name" type="text" placeholder = "Ваше имя"><br>
-                <input class = "phone" type="text" placeholder = "Ваш телефон"><br>
-                <input class = "email" type="text" placeholder = "Ваш email">
+
+                <input type="text" 
+                  placeholder = "Ваше имя"
+                  class = "name"
+                  ng-model = "questionFormData.name"
+                  required
+                ><br>
+
+                <input type="tel" 
+                  placeholder = "Ваш телефон"
+                  class = "phone"
+                  ng-model = "questionFormData.phone"
+                  mask
+                  ng-minlength = "18"
+                  required
+                ><br>
+
+                <input type="email" 
+                  placeholder = "Ваш email" 
+                  class = "email" 
+                  ng-model = "questionFormData.email" 
+                  required
+                >
               </div>
               <div class="cell1_2">
-                <textarea placeholder = "Ваш вопрос" name="" id="" cols="30" rows="10" class = "comment"></textarea>
-                <button class="btn questionBtn">Оставить  заявку</button>
+                <textarea placeholder = "Ваш вопрос" 
+                  cols="30" 
+                  rows="10" 
+                  class = "comment"
+                  ng-model = "questionFormData.question" 
+                  required
+                ></textarea>
+                <button class="btn" ng-disabled="questionForm.$invalid && questionForm.$invalid"
+                  ng-click = "questionFormSend(questionFormData)">Оставить  заявку</button>
               </div>
             </div> 
           </form>
@@ -454,5 +520,13 @@
     <script src="bower_components/ngDialog/js/ngDialog.min.js"></script>
     <!-- // <script src="bower_components/angular-mask/dist/ngMask.min.js"></script> -->
     <script src="js/build/app.js"></script>
+
+    <script type="text/ng-template" id="confirmPopup">
+        <p>Ваша заявка принята!!! <br> Ждите обратного звонка.</p>
+    </script>
+
+    <script type="text/ng-template" id="questionResponse">
+        <p>Ваш Вопрос принят на рассмотрение. Ждите уведомления.</p>
+    </script>
   </body>
 </html>

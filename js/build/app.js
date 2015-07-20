@@ -27,9 +27,6 @@ app.factory('Mandrill', ['$http', 'ngDialog',
                     }
                 })
                 .success(function(data, status, headers, config){
-                    console.log(data);
-                    console.log(status);
-                    ngDialog.closeAll();
 
                 });
             }
@@ -47,37 +44,49 @@ app.directive('mask', function () {
 
 
 app.controller('mainCtrl', ['$scope', '$rootScope' , 'ngDialog', function($scope, $rootScope, ngDialog){
-    $scope.openOrderCallPopup = function(namePopup){
+    $scope.openOrderCallPopup = function(){
         ngDialog.open({
             template: 'orderCallPopup.html',
-            className: 'popup',
-            controller: ['$scope', 'Mandrill', 'ngDialog', function($scope, Mandrill, ngDialog){
-                
-            }]
+            className: 'popup'
         });
     };
-}])
-
-
-app.controller('popupCtrl', ['$scope', 'ngDialog', 'Mandrill', function($scope, ngDialog, Mandrill){
-    $scope.close = function(){
-        console.log(ngDialog.closeAll());
-        ngDialog.closeAll();
+    $scope.openLeaveApplication = function(plan){
+        ngDialog.open({
+            template: 'leaveApplicationPopup.html',
+            className: 'popup',
+            data: plan
+        });
     };
-    $scope.user = {};
-    $scope.orderCall = {
-        hideEmail: true,
-        resp:{
-            subject: 'Заказать звонок',
-            msg: $scope.user.name + ' Заказал звонок на номер ' + $scope.user.phone
+}]);
+
+
+app.controller('leaveApplicationCtrl', ['$scope', 'ngDialog', 'Mandrill', function($scope, ngDialog, Mandrill){
+    $scope.sended = false;
+    $scope.leaveApplicationData = {
+        subject: 'Оставить заявку',
+        name: '',
+        phone: '',
+        email: '',
+        msg: '',
+        msgF: function(){
+            return this.msg = this.name + ' оставил заявку на план . Контактные данные: tel: '+ this.phone + ' email: ' +this.email;
         }
-        
     };
-    $scope.sendEmail = function(user){
-        console.log(user);
-        // Mandrill.messageWork(user);
+    $scope.leaveApplicationSend = function(f){
+
+        f.msgF()
+        if(f.name == '' || f.phone == '' || f.email ==''){
+            console.log('Ошибка телефон: ' + f.phone + ' имя ' + f.name);
+        }else{
+           Mandrill.messageWork(f).success(function(){
+                $scope.sended = true;
+                setTimeout(function(){
+                    ngDialog.closeAll();
+                }, 1000);
+           });
+        }
     }
-}])
+}]);
 
 app.controller('orderCallPopupCtrl', ['$scope', 'ngDialog', 'Mandrill', function($scope, ngDialog, Mandrill){
     $scope.sended = false;
@@ -90,20 +99,82 @@ app.controller('orderCallPopupCtrl', ['$scope', 'ngDialog', 'Mandrill', function
             return this.msg = this.name + ' заказал звонок на номер '+ this.phone;
         }
     };
-    var msg = function(){
-        console.log($scope.orderCallData.name + ' заказал звонок на номер '+ $scope.orderCallData.phone);
-    }
-
-
     $scope.orderCallSend = function(f){
+
         f.msgF()
         if(f.name == '' || f.phone == ''){
             console.log('Ошибка телефон: ' + f.phone + ' имя ' + f.name);
         }else{
-           // Mandrill.messageWork(f);
-           console.log(f);
+           Mandrill.messageWork(f).success(function(){
+                $scope.sended = true;
+                setTimeout(function(){
+                    ngDialog.closeAll();
+                }, 1000);
+           });
         }
     }
 }]);
 
 
+
+
+app.controller('leaveApplicationMiniCtrl', ['$scope', 'ngDialog', 'Mandrill', function($scope, ngDialog, Mandrill){
+    $scope.leaveApplicationMiniData = {
+        subject: 'Оставить заявку',
+        name: '',
+        phone: '',
+        msg: '',
+        msgF: function(){
+            return this.msg = this.name + ' оставил заявку. Контактные данные: tel: '+ this.phone;
+        }
+    };
+    $scope.leaveApplicationMiniSend = function(f){
+        f.msgF()
+        if(f.name == '' || f.phone == ''){
+            console.log('Ошибка телефон: ' + f.phone + ' имя ' + f.name);
+        }else{
+           Mandrill.messageWork(f).success(function(){
+                ngDialog.open({
+                    template: 'confirmPopup',
+                    className: 'confirmPopup',
+                });
+
+                setTimeout(function(){
+                    ngDialog.closeAll();
+                }, 1000);
+
+
+           });
+        }
+    }
+}]);
+
+app.controller('questionFormCtrl', ['$scope', 'ngDialog', 'Mandrill', function($scope, ngDialog, Mandrill){
+    $scope.questionFormData = {
+        subject: 'Вопрос',
+        name: '',
+        phone: '',
+        email: '',
+        question: '',
+        msg: '',
+        msgF: function(){
+            return this.msg = 'Гражданин '+ this.name + ' задал вопрос: <br>'+ this.question + '<br> Контактные данные: email: ' +this.email + ' телефон: ' + this.phone;
+        }
+    };
+    $scope.questionFormSend = function(f){
+        f.msgF();
+        if(f.name == '' || f.phone == '' || f.email =='' || f.question == ''){
+            console.log('Ошибка телефон: ' + f.phone + ' имя ' + f.name);
+        }else{
+           Mandrill.messageWork(f).success(function(){
+                ngDialog.open({
+                    template: 'questionResponse',
+                    className: 'confirmPopup',
+                });
+                setTimeout(function(){
+                    ngDialog.closeAll();
+                }, 1000);
+           });
+        }
+    }
+}]);

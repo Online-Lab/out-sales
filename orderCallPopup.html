@@ -41,15 +41,12 @@
     </span>
 
 
-
-    <input type="submit" 
-      value = "отправить" 
-      ng-disabled="orderCallPopup.$invalid && orderCallPopup.$invalid"
-      ng-click = "orderCallSend(orderCallData)"
-    >
+    <button ng-disabled="orderCallPopup.$invalid && orderCallPopup.$invalid"
+      ng-click = "orderCallSend(orderCallData)">отправить</button>
   </div>
-  <div ng-show = "sended">
-    Ваша заявка на обратный звонок принята
+  <div ng-show = "sended" class = "sended">
+    Ваша заявка на обратный звонок принята! <br>
+    Ждите звонка!!!
   </div>
   
 </form>

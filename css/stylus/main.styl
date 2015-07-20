@@ -158,10 +158,13 @@ li
 
 .sec2
     background-color db
+    background-image: url(../../img/bg1-1.png)
+    background-size cover
 
 .sec3
     background-color cb
-
+    background-image: url(../../img/bg2.png)
+    background-size cover
 .sec4
     background url(../../img/bg2.jpg) 0 0 no-repeat
 
@@ -171,11 +174,16 @@ li
     .logo-wrap 
         margin 0
         padding 20px 0
+        
+.sec6
+    background-color cb
+    background-image: url(../../img/bg3.png)
+    background-size cover
 
 .sec1,
 .sec4
     background-size cover
-    background-position center bottom
+    background-position center 8%
 .ylw
     color ylw
 .bl
@@ -200,7 +208,7 @@ li
 
 
 .scroll-down-wrap
-    padding-bottom 2px
+    padding-bottom 20px
 
 .scroll-down
     cursor: pointer;
@@ -900,9 +908,10 @@ li
     center()   
 
 form.popup
-    padding 35px 25px
+    padding 35px 25px 20px 25px
     border-radius 10px
     background white
+    button,
     input[type="submit"]
         width 100%
         background ylw
@@ -911,6 +920,12 @@ form.popup
         text-transform uppercase
         &:disabled
             background-color #aaa
+.confirmPopup .ngdialog-content
+    background-color #fff
+    padding 10px
+    color #000
+    text-align center
+    border-radius 10px
 
 .ngdialog-close
     position: absolute
@@ -923,12 +938,16 @@ form.popup
         color red
         font-size 20px
     
-.ng-invalid,
+// .ng-invalid,
 .ng-invalid-minlength
     border-color red!important
 
 // .ng-valid,
 .ng-valid
     border-color green!important
+    
+.sended
+    color #000
+    text-align center
     
 @import media
