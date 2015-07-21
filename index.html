@@ -17,7 +17,7 @@
     <div class="main-wrap" ng-controller="mainCtrl">
 
 
-      <section class="section sec1">
+      <section class="section sec2">
           <div class="center slideInUp wow">
             <div class="header">
               <a href="http://www.out-sales.ru" class="fs1 wow slideInLeft">out-sales</a>
@@ -37,18 +37,26 @@
           </div>
           <div action="" class="btn-wrap">
 
-            <button class = "wow fadeInLeft btn"  type="btn" ng-click = "openOrderCallPopup()" data-wow-delay="0.4s">Заказать <br> звонок</button>
+            <button 
+              onclick="yaCounter31164566.reachGoal('zakaz1'); return true;" 
+              class = "wow fadeInLeft btn" 
+              type="btn" 
+              ng-click = "openOrderCallPopup()" 
+              data-wow-delay="0.4s">Заказать <br> звонок</button>
 
-            <button class = "wow fadeInRight btn" type="btn" ng-click = "openLeaveApplication()" data-wow-delay="0.4s">Оставить <br> заявку</button>
+            <button 
+              onclick="yaCounter31164566.reachGoal('zayavka1'); return true;" 
+              class = "wow fadeInRight btn" 
+              type="btn" 
+              ng-click = "openLeaveApplication()" 
+              data-wow-delay="0.4s">Оставить <br> заявку</button>
 
           </div>
           <div class="scroll-down-wrap">
             <div class="scroll-down next-section"><span></span></div>
           </div>
-      </section>
+      
 
-
-      <section class="section sec2">
         <div class="center vp wow fadeInRight">
           <p class="title fs5 " >Гарантируем клиентов, если:</p>
           <div class="row v0 mt100 "> <!-- ylwh -->
@@ -88,7 +96,7 @@
       </section>
 
 
-      <section class="section sec3">
+      <section class="section sec3-1">
         <div class="center vtp">
           <p class="title fs6 bigger bl wow fadeInTop">2 стадии увеличения ваших продаж</p>
 
@@ -150,7 +158,12 @@
 
           <p class="price fs6_1 wow fadeInLeft" data-wow-delay="0.4s">12 000 руб.</p>
 
-          <button class = "wow fadeInRight btn" type="btn" ng-click = "openLeaveApplication()" data-wow-delay="0.4s">Оставить <br> заявку</button>
+          <button 
+            onclick="yaCounter31164566.reachGoal('zakaz12000'); return true;"
+            class = "wow fadeInRight btn" 
+            type="btn" 
+            ng-click = "openLeaveApplication()" 
+            data-wow-delay="0.4s">Оставить <br> заявку</button>
 
 
         </div>
@@ -214,7 +227,12 @@
 
           <p class="price fs6_1 wow fadeInLeft" data-wow-delay="0.4s">17 000 руб.</p>
 
-          <button class = "wow fadeInRight btn" type="btn" ng-click = "openLeaveApplication()" data-wow-delay="0.4s">Оставить <br> заявку</button>
+          <button 
+            class = "wow fadeInRight btn" 
+            type="btn" 
+            onclick="yaCounter31164566.reachGoal('zakaz17000'); return true;"
+            ng-click = "openLeaveApplication()" 
+            data-wow-delay="0.4s">Оставить <br> заявку</button>
 
         </div>
       </section>
@@ -251,6 +269,7 @@
           <button class="btn orderCallBtn" 
             ng-disabled="leaveApplicationMini.$invalid && leaveApplicationMini.$invalid"
             ng-click = "leaveApplicationMiniSend(leaveApplicationMiniData)"
+            onclick="yaCounter31164566.reachGoal('zayavka2'); return true;"
             >Оставить <br> заявку</button>
 
         </form>
@@ -263,7 +282,7 @@
       </section>
 
 
-      <section class="section sec6 vp">
+      <section class="section sec3 vp">
         
 
         <div class="v1 center">
@@ -316,7 +335,7 @@
       </section>
 
 
-      <section class="section sec5">
+      <section class="section sec6">
         
         <div class="center vp">
           <p class="title fs6 ">Три повода работать с нами</p>
@@ -392,6 +411,7 @@
             <button class="btn orderCallBtn" 
               ng-disabled="leaveApplicationMini.$invalid && leaveApplicationMini.$invalid"
               ng-click = "leaveApplicationMiniSend(leaveApplicationMiniData)"
+              onclick="yaCounter31164566.reachGoal('zayavka3'); return true;"
               >Оставить <br> заявку</button>
 
           </form>
@@ -477,7 +497,9 @@
                   ng-model = "questionFormData.question" 
                   required
                 ></textarea>
-                <button class="btn" ng-disabled="questionForm.$invalid && questionForm.$invalid"
+                <button class="btn" 
+                  ng-disabled="questionForm.$invalid && questionForm.$invalid" 
+                  onclick="yaCounter31164566.reachGoal('vopros'); return true;" 
                   ng-click = "questionFormSend(questionFormData)">Оставить  заявку</button>
               </div>
             </div> 
@@ -485,6 +507,11 @@
 
         </div>
 
+        
+
+      </section>
+
+      <section class = "section sec3">
         <div class="map">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2247.7155592121762!2d37.58174278650722!3d55.71131582115129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54b7b180d218f%3A0x31f00ce00b648f01!2z0JvQtdC90LjQvdGB0LrQuNC5INC_0YAuLCAzMCwg0JzQvtGB0LrQstCwLCAxMTkzMzQ!5e0!3m2!1sru!2sru!4v1435837032910" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
@@ -496,7 +523,6 @@
           <span class="logo-desk fs3">Тел: +7(499)348-24-43</span>
           <span class="logo-desk fs3">E-mail: info@out-sales.ru</span>
         </a>
-
       </section>
 
 
