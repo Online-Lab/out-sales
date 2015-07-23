@@ -24,6 +24,6 @@ $('.back-to-top').click(function() {
 
 // block animation
 
-new WOW().init();
+
 
 

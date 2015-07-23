@@ -57,6 +57,12 @@ app.controller('mainCtrl', ['$scope', '$rootScope' , 'ngDialog', function($scope
             data: plan
         });
     };
+
+    var day = new Date().getUTCDate();
+    var month = new Date().getMonth();
+    var year = new Date().getFullYear();
+    $scope.commitedDeals = year - 1000 + month + day;
+    $scope.canWin = Math.round($scope.commitedDeals * 1.493) *1000;
 }]);
 
 
@@ -86,13 +92,6 @@ app.controller('leaveApplicationCtrl', ['$scope', 'ngDialog', 'Mandrill', functi
            });
         }
     };
-
-    $scope.today = Date.now();
-    console.log($scope.today);
-    var myDate ="01-08-2015";
-    myDate=myDate.split("-");
-    var newDate=myDate[1]+"/"+myDate[0]+"/"+myDate[2];
-    $scope.myDateMs = new Date(newDate).getTime();
 }]);
 
 app.controller('orderCallPopupCtrl', ['$scope', 'ngDialog', 'Mandrill', function($scope, ngDialog, Mandrill){

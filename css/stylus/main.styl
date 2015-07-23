@@ -1,209 +1,7 @@
 @import slick
 @import mixins
-@import animate
 @import variables
-
-body
-    font-family "Verdana"
-    font-size 12px
-    color #fff
-ul,
-li
-    display inline-block
-
-.main-wrap
-    width 100%
-
-
-.logo-img
-    width 100px
-    img
-        width 100%
-
-.center
-    width: 100%
-    padding 50px 5%
-    box-sizing border-box
-    // width 1200px
-    margin auto
-    position relative
-    section
-        display block
-        width 100%
-
-
-.logo-wrap
-    display block
-    text-align center
-    text-decoration none
-    padding 20px 0
-.footer-year
-    font-size 13px 
-    color #fff
-
-.logo,
-.logo-desk
-    display block
-    color #fff
-    font-family "Tahoma"
-
-
-.fs1
-    font-size txt18
-    font-weight 700
-    text-align right
-    line-height 35px
-    color #fff
-
-.fs2
-    font-size txt50
-    font-weight 900
-    font-family "Tahoma"
-.fs3
-    font-size txt15
-    fony-weight 100
-    font-family "Tahoma"
-    &.c
-        text-align center
-        margin-top -35px
-    
-.fs4
-    text-align center
-    fony-weight 100
-    font-size txt30
-
-.fs5
-    text-align center
-    font-weight 700
-    font-size txt20
-    text-transform uppercase
-
-.fs6
-    font-weight 900
-    font-size txt30
-    text-align center
-    text-transform uppercase
-    &.bigger
-        font-size txt38
-.fs6_1
-    font-weight 100
-    margin: auto;
-    font-size txt30
-    text-align center
-    text-transform uppercase
-    color #CFD8DC
-
-
-.fs7
-    font-weight 100
-    font-size txt20
-    text-transform uppercase
-
-.fs8
-    font-weight 900
-    font-size txt70
-    font-family "Tahoma"
-    margin 0
-.fs9
-    font-weight 700
-    font-size txt18
-    font-family "Tahoma"
-    text-transform uppercase
-
-.fs10
-    font-weight 100
-    text-align center
-    font-size txt25
-    margin 50px 0
-
-.fs11
-    font-weight 100
-    font-size txt30
-    margin 50px 0
-    text-transform uppercase
-    
-.fs12
-    font-size txt30
-    text-transform uppercase
-    color lg
-    text-align center
-    font-weight 100
-
-.fs13
-    font-size txt22
-    // text-align center
-    font-weight 100
-    color #CFD8DC
-    
-.fs14
-    font-size txt14
-    text-align center
-    line-height 25px
-
-.numInCircle
-    display inline-block
-    border 2px solid lg
-    border-radius 30px
-    padding 0.1em 0.4em
-    
-
-.db
-    color db
-
-.header
-    margin-bottom 40px
-    p,a
-        display inline-block
-        text-decoration none
-    p
-        float right
-        margin 0
-
-.sec1
-    background url(../../img/bg1.png) 0 0 no-repeat
-
-.sec2
-    background-color db
-    background-image: url(../../img/bg1-1.png)
-    background-size cover
-
-.sec3
-    background-color cb
-
-.sec3-1
-    background-color cb
-    background-image: url(../../img/bg2.png)
-    background-size cover
-.sec4
-    background url(../../img/bg2.jpg) 0 0 no-repeat
-
-.sec5
-    background db url(../../img/bg1.png) center center no-repeat
-    background-size 100% auto
-    .logo-wrap 
-        margin 0
-        padding 20px 0
-        
-.sec6
-    background-color cb
-    background-image: url(../../img/bg3.png)
-    background-size cover
-    background-position: right top
-
-.sec1,
-.sec4
-    background-size cover
-    background-position center 8%
-.ylw
-    color ylw
-.bl
-    color bl
-
-.section
-    margin-top -2px
-    width 100%
-
-
+@import animate
 
 .mt100
     margin-top 100px
@@ -953,6 +751,128 @@ li
         transform: translate3d(0, 200%, 0);
     }
 }
+
+
+
+
+
+
+// ngDialog
+
+
+@-webkit-keyframes ngdialog-fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ngdialog-fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes ngdialog-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ngdialog-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.ngdialog {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ngdialog *,
+.ngdialog *:before,
+.ngdialog *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.ngdialog {
+  position: fixed;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.ngdialog-overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: ngdialog-fadein 0.5s;
+  animation: ngdialog-fadein 0.5s;
+}
+
+.ngdialog.ngdialog-closing .ngdialog-overlay {
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: ngdialog-fadeout 0.5s;
+  animation: ngdialog-fadeout 0.5s;
+}
+
+.ngdialog-content {
+  background: white;
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: ngdialog-fadein 0.5s;
+  animation: ngdialog-fadein 0.5s;
+}
+
+.ngdialog.ngdialog-closing .ngdialog-content {
+  -webkit-backface-visibility: hidden;
+  -webkit-animation: ngdialog-fadeout 0.5s;
+  animation: ngdialog-fadeout 0.5s;
+}
+
+.ngdialog-close:before {
+  font-family: 'Helvetica', Arial, sans-serif;
+  content: '\00D7';
+  cursor: pointer;
+}
+
+body.ngdialog-open {
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
 
 
 

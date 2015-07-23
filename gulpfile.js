@@ -4,18 +4,35 @@ var gulp          = require('gulp'),
     autoprefixer  = require('gulp-autoprefixer'),
     uglify        = require('gulp-uglifyjs'),
     order         = require('gulp-order'),
-    print         = require('gulp-print');
+    print         = require('gulp-print'),
+    clean         = require('gulp-clean'),
     connect       = require('gulp-connect-multi')();
 
 
+gulp.task('clean', function(){
+  gulp.src(['css/built', 'js/build'], {read: false})
+      .pipe(clean({force: true}));
+});
+
 
 gulp.task('stylus', function(){
-    gulp.src(['bower_components/normalize.styl/normalize.styl', 'css/stylus/*.styl', 'css/stylus/!(svg.styl)'])
+    gulp.src(['css/stylus/*.styl', '!css/stylus/first.styl'])
+      .pipe(stylus({compress : true}))
+      .pipe(concat('concat.css'))
+      .pipe(autoprefixer())
+      .pipe(gulp.dest('css/build'));
+});
+
+
+gulp.task('style-first', function(){
+    gulp.src(['bower_components/normalize.styl/normalize.styl', 
+              'css/stylus/first.styl'])
        .pipe(stylus({compress : true}))
-       .pipe(concat('concat.css'))
+       .pipe(concat('first.css'))
        .pipe(autoprefixer())
        .pipe(gulp.dest('css/build'));
 });
+
 
 gulp.task('svgcss', function(){
     gulp.src(['css/stylus/svg.styl'])
@@ -50,9 +67,9 @@ gulp.task('js', function () {
 
 
 gulp.task('watch', function(){
-    gulp.watch(['css/stylus/*.styl'], ['stylus']);
+    gulp.watch(['css/stylus/*.styl'], ['stylus', 'clean']);
     gulp.watch(['*.html'], ['html']);
-    gulp.watch(['*.js'], ['js']);
+    gulp.watch(['*.js'], ['js', 'clean']);
 });
 
 
@@ -60,20 +77,18 @@ gulp.task('uglify', function() {
   gulp.src(['js/*.js', 
     'js/vendor/*.js',
     'bower_components/slick.js/slick/slick.min.js',
-    // 'bower_components/angular/angular.min.js',
-    // 'bower_components/ngDialog/js/ngDialog.min.js',
-    'bower_components/wowjs/dist/wow.min.js'])
+    'bower_components/angular/angular.min.js',
+    'bower_components/ngDialog/js/ngDialog.min.js'])
     .pipe(order([
-        'js/vendor/modernizr-2.8.3.min.js', 
-        'js/vendor/jquery-1.11.3.min.js', 
+        'js/vendor/modernizr-2.8.3.min.js',
+        'js/vendor/jquery-1.11.3.min.js',
         'bower_components/slick.js/slick/slick.min.js', 
-        'bower_components/wowjs/dist/wow.min.js', 
-        // 'bower_components/angular/angular.min.js',
-        // 'bower_components/ngDialog/js/ngDialog.min.js',
-        'js/classie.js',
+        'bower_components/angular/angular.min.js',
+        'bower_components/ngDialog/js/ngDialog.min.js',
         'js/jquery.maskedinput.min.js',
-        'js/main.js'
-        // 'app.js'
+        'js/classie.js',
+        'js/main.js',
+        'js/app.js'
       ], { base: './' }))
     .pipe(print())
     .pipe(concat('scripts.min.js'))
@@ -81,5 +96,7 @@ gulp.task('uglify', function() {
     .pipe(gulp.dest('js/build'))
 });
 
-gulp.task('default', ['connect', 'stylus', 'watch', 'svgcss', 'uglify']);
+
+
+gulp.task('default', ['clean', 'connect', 'style-first', 'stylus', 'watch', 'svgcss', 'uglify']);
 
