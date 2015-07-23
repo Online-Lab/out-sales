@@ -10,8 +10,6 @@ body
 ul,
 li
     display inline-block
-*:focus
-    outline none
 
 .main-wrap
     width 100%
@@ -65,6 +63,9 @@ li
     font-size txt15
     fony-weight 100
     font-family "Tahoma"
+    &.c
+        text-align center
+        margin-top -35px
     
 .fs4
     text-align center
@@ -267,6 +268,21 @@ li
     .btn
         margin 10px
 
+.back-to-top
+    width 100px
+    height 100px
+    display inline-block
+    position fixed
+    bottom 20px
+    background: url(../../img/gotop.png) 0 0 no-repeat
+    background-size cover
+    right 20px
+    border 0
+    opacity 0.8
+    display none
+    &:hover
+        opacity 1
+
 .btn,
 .morph-button > button 
     color : #fff
@@ -357,7 +373,32 @@ li
             span
                 display inline-block
                 margin-top 20px
-        
+    &.v5
+        .cell1_2
+            box-sizing border-box
+            text-align left
+            &:first-of-type
+                padding-right 2%
+            &:last-of-type
+                padding-left 2%
+        .fs12
+            font-size txt22
+        .img
+            width 11%
+            margin-right 2%
+            display table-cell
+        .txt
+            width 85%
+            padding-left 5%
+            font-size txt18
+            display table-cell
+            vertical-align middle
+        .line
+            vertical-align middle
+            display table-row
+        .fs6_1
+            font-size txt20
+            font-style normal
 .img 
     margin auto
     svg, img
@@ -481,6 +522,7 @@ li
 
 
 .hide-img
+    height 330px
     .fs14
         display none
         color ylw
@@ -966,5 +1008,21 @@ form.popup
 .sended
     color #000
     text-align center
-    
+
+
+.timer #countbox
+    padding 10px 20px!important
+    background: rgba(255,255,255, 0.8)
+    border-radius 10px
+    // display inline-block
+    text-align center
+// input, 
+// textarea, 
+// keygen, 
+// select, 
+// button
+//     &:focus
+//         outline-style none!important
+// -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
 @import media

@@ -1,4 +1,4 @@
-var app = angular.module('outSales', ['ngDialog']);
+var app = angular.module('outSales', ['ngDialog', 'timer']);
 
 app.factory('Mandrill', ['$http', 'ngDialog',
     function($http, ngDialog) {
@@ -85,7 +85,14 @@ app.controller('leaveApplicationCtrl', ['$scope', 'ngDialog', 'Mandrill', functi
                 }, 1000);
            });
         }
-    }
+    };
+
+    $scope.today = Date.now();
+    console.log($scope.today);
+    var myDate ="01-08-2015";
+    myDate=myDate.split("-");
+    var newDate=myDate[1]+"/"+myDate[0]+"/"+myDate[2];
+    $scope.myDateMs = new Date(newDate).getTime();
 }]);
 
 app.controller('orderCallPopupCtrl', ['$scope', 'ngDialog', 'Mandrill', function($scope, ngDialog, Mandrill){
@@ -177,4 +184,6 @@ app.controller('questionFormCtrl', ['$scope', 'ngDialog', 'Mandrill', function($
            });
         }
     }
-}]);
+}])
+
+;
