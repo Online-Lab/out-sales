@@ -1,4 +1,4 @@
-var app = angular.module('outSales', ['ngDialog', 'timer']);
+var app = angular.module('outSales', ['ngDialog']);
 
 app.factory('Mandrill', ['$http', 'ngDialog',
     function($http, ngDialog) {
