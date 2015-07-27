@@ -5,14 +5,14 @@ var gulp          = require('gulp'),
     uglify        = require('gulp-uglifyjs'),
     order         = require('gulp-order'),
     print         = require('gulp-print'),
-    clean         = require('gulp-clean'),
+    // clean         = require('gulp-clean'),
     connect       = require('gulp-connect-multi')();
 
 
-gulp.task('clean', function(){
-  gulp.src(['css/built', 'js/build'], {read: false})
-      .pipe(clean({force: true}));
-});
+// gulp.task('clean', function(){
+//   gulp.src(['css/built', 'js/build'], {read: false})
+//       .pipe(clean({force: true}));
+// });
 
 
 gulp.task('stylus', function(){
@@ -24,14 +24,14 @@ gulp.task('stylus', function(){
 });
 
 
-gulp.task('style-first', function(){
-    gulp.src(['bower_components/normalize.styl/normalize.styl', 
-              'css/stylus/first.styl'])
-       .pipe(stylus({compress : true}))
-       .pipe(concat('first.css'))
-       .pipe(autoprefixer())
-       .pipe(gulp.dest('css/build'));
-});
+// gulp.task('style-first', function(){
+//     gulp.src(['bower_components/normalize.styl/normalize.styl', 
+//               'css/stylus/first.styl'])
+//        .pipe(stylus({compress : true}))
+//        .pipe(concat('first.css'))
+//        .pipe(autoprefixer())
+//        .pipe(gulp.dest('css/build'));
+// });
 
 
 gulp.task('svgcss', function(){
@@ -67,9 +67,9 @@ gulp.task('js', function () {
 
 
 gulp.task('watch', function(){
-    gulp.watch(['css/stylus/*.styl'], ['stylus', 'clean']);
+    gulp.watch(['css/stylus/*.styl'], ['stylus']);
     gulp.watch(['*.html'], ['html']);
-    gulp.watch(['*.js'], ['js', 'clean']);
+    gulp.watch(['*.js'], ['js']);
 });
 
 
@@ -98,5 +98,5 @@ gulp.task('uglify', function() {
 
 
 
-gulp.task('default', ['clean', 'connect', 'style-first', 'stylus', 'watch', 'svgcss', 'uglify']);
+gulp.task('default', ['connect', 'stylus', 'watch', 'svgcss', 'uglify']);
 

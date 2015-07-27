@@ -11,6 +11,7 @@ li
 .main-wrap
     width 100%
 
+
 button,
 input,
 textarea,
@@ -20,6 +21,8 @@ select
         outline-offset: 0px!important
 .logo-img
     width 100px
+    position absolute
+    left 20%
     img
         width 100%
 
@@ -39,7 +42,7 @@ select
     display block
     text-align center
     text-decoration none
-    padding 20px 0
+    // padding 20px 0
 .footer-year
     font-size 13px 
     color #fff
@@ -49,6 +52,7 @@ select
     display block
     color #fff
     font-family "Tahoma"
+
 
 
 .fs1
@@ -152,15 +156,41 @@ select
 
 .db
     color db
-
+.header-wrap
+    height 132px
+    display block
 .header
+    position fixed
+    display block
+    width 100%
     margin-bottom 40px
+    // position relative
+    text-align center
+    padding 1% 0
+    background: rgba(45,101,124, 1)
+    z-index 100
     p,a
         display inline-block
         text-decoration none
-    p
-        float right
+    p.tel
+        position absolute
+        right 20%
+        top 30px
         margin 0
+    &.sm
+        *
+            transition 0.1s
+        .logo-img
+            height 50px
+            img
+                height 100%
+        .fs2
+            font-size txt20
+        .fs3
+            font-size txt12
+        .fs1
+            font-size txt12
+            line-height 19px
 
 .sec1
     background url(../../img/bg1.png) 0 0 no-repeat

@@ -1,3 +1,4 @@
+@import first
 @import slick
 @import mixins
 @import variables
@@ -13,7 +14,6 @@
     padding-top 100px
 .vbp
     padding-bottom 100px
-
 
 .scroll-down-wrap
     padding-bottom 20px
@@ -172,28 +172,27 @@
                 display inline-block
                 margin-top 20px
     &.v5
-        .cell1_2
-            box-sizing border-box
-            text-align left
-            &:first-of-type
-                padding-right 2%
-            &:last-of-type
-                padding-left 2%
+        flex-flow row wrap
         .fs12
             font-size txt22
         .img
-            width 11%
+            width 6%
             margin-right 2%
             display table-cell
+            vertical-align middle
+            img
+                height auto
         .txt
             width 85%
             padding-left 5%
-            font-size txt18
+            font-size txt22
             display table-cell
             vertical-align middle
         .line
             vertical-align middle
             display table-row
+            width 100%
+            padding 8px 0
         .fs6_1
             font-size txt20
             font-style normal
@@ -235,7 +234,6 @@
         &:hover
             background rgba(207,216,220,1)
 
-
 .ylwh>div
     &:hover
         color ylw
@@ -248,21 +246,6 @@
         color bl
         .img path
             fill bl
-
-
-// .rocket
-//     -webkit-mask-image: url(../../img/rocket.svg)
-//     // background url(../../img/rocket.svg) 0 0 no-repeat
-        
-// .levin
-//     -webkit-mask-image: url(../../img/levin.svg)
-//     // -webkit-mask-size auto 60%
-
-// .star
-//     -webkit-mask-image: url(../../img/star.svg)
-
-// .lamp
-//     -webkit-mask-image: url(../../img/lamp.svg)
 
 
 .gears
@@ -280,8 +263,6 @@
 .mike
     background: url(../../img/mike.svg) center center no-repeat
 
-// .pig
-//     background: url(../../img/pig.svg) center center no-repeat
 
 .clock
     background: url(../../img/clock.svg) center center no-repeat
