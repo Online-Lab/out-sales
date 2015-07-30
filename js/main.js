@@ -1,9 +1,13 @@
+ var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 ;$(document).ready(function() {
     //slider
     $('.slider').slick({
         dots: true,
         arrows: false
     });
+    if(w<780){
+        $('.header').addClass('sm');
+    }
 });
 
 
@@ -17,18 +21,25 @@ $(window).scroll(function() {
     }
 
     var winPosition = $(window).scrollTop();
-    if(winPosition > 70){
+   
+    if(w>780){
+        if(winPosition > 70){
+            
+            $('.header').addClass('sm');
+            $('.header').stop().animate({
+                height: 50
+            }, 100);
+        }
+        else{
+            $('.header').removeClass('sm');
+            $('.header').stop().animate({
+                height: 94
+            },100);
+        }
+    }else{
         $('.header').addClass('sm');
-        $('.header').stop().animate({
-            height: 50
-        }, 100);
     }
-    else{
-        $('.header').removeClass('sm');
-        $('.header').stop().animate({
-            height: 94
-        },100);
-    }
+    
 });
 $('.back-to-top').click(function() {
     $('body,html').animate({
