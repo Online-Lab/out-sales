@@ -26,15 +26,11 @@ $(window).scroll(function() {
         if(winPosition > 70){
             
             $('.header').addClass('sm');
-            $('.header').stop().animate({
-                height: 50
-            }, 100);
+            
         }
         else{
             $('.header').removeClass('sm');
-            $('.header').stop().animate({
-                height: 94
-            },100);
+            
         }
     }else{
         $('.header').addClass('sm');

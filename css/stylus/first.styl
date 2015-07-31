@@ -19,12 +19,7 @@ select
     &:focus
         outline: 1px solid rgba(31,115,240,0.6)!important
         outline-offset: 0px!important
-.logo-img
-    width 100px
-    position absolute
-    left 20%
-    img
-        width 100%
+
 
 .center
     width: 100%
@@ -36,22 +31,6 @@ select
     section
         display block
         width 100%
-
-
-.logo-wrap
-    display block
-    text-align center
-    text-decoration none
-    // padding 20px 0
-.footer-year
-    font-size 13px 
-    color #fff
-
-.logo,
-.logo-desk
-    display block
-    color #fff
-    font-family "Tahoma"
 
 
 
@@ -76,8 +55,14 @@ select
     
 .fs4
     text-align center
-    fony-weight 100
+    font-weight 700
     font-size txt30
+    // text-decoration underline
+    span
+        display inline-block
+        padding-bottom 5px
+        letter-spacing 1px
+        border-bottom 4px solid white
 
 .fs5
     text-align center
@@ -102,9 +87,11 @@ select
 
 
 .fs7
-    font-weight 100
+    font-weight 700
     font-size txt20
     text-transform uppercase
+    text-align left
+    
 
 .fs8
     font-weight 900
@@ -153,37 +140,34 @@ select
     border-radius 30px
     padding 0.1em 0.4em
     
-
+.ml20
+    margin-left 20px
 .db
     color db
+
 .header-wrap
-    height 132px
+    height 70px
     display block
+
 .header
     position fixed
     display block
     width 100%
     margin-bottom 40px
-    // position relative
     text-align center
-    padding 1% 0
-    background: rgba(45,101,124, 1)
+    background: white
     z-index 100
     p,a
         display inline-block
         text-decoration none
     p.tel
-        position absolute
-        right 20%
-        top 30px
         margin 0
+        margin-top 10px
+        float right
+        color db
     &.sm
         *
             transition 0.1s
-        .logo-img
-            height 50px
-            img
-                height 100%
         .fs2
             font-size txt20
         .fs3
@@ -191,6 +175,46 @@ select
         .fs1
             font-size txt12
             line-height 19px
+        span
+            margin 0 0 0 60px
+        p.tel
+            margin-top 5px
+    .center
+        padding 15px 0
+        text-align left
+   
+        
+
+.logo-wrap
+    display block
+    text-align center
+    text-decoration none
+    // padding 20px 0
+.logo
+    position relative
+    span
+        color db
+        margin 0 0 0 110px
+    img
+        position absolute
+        left 0
+        top 0
+        height 100%
+        display inline-block
+.footer-year
+    font-size 13px 
+    color #fff
+
+.logo,
+.logo-desk
+    display block
+    color #fff
+    font-family "Tahoma"
+
+
+.for-you-wrap
+    margin-top 100px
+
 .for-you
     li
         display block
@@ -199,7 +223,38 @@ select
         font-size txt16
         margin-bottom 20px
         &:before
-            content "- "
+            content ""
+            // padding-top 3px
+            display inline-block
+            width 17px
+            height 13px
+            background url(../../img/list-marker.svg) 0 0 no-repeat
+
+.stock-wrap
+    background-color bl
+    border-radius 20px
+    padding 10px
+    width 370px
+    float right
+    text-align center
+    p.fs7
+        margin 0
+        padding 0 30px
+        display inline-block
+        font-size txt30
+        border-bottom 2px solid white
+    p.fs13
+        font-weight 700
+        font-size txt20
+        margin-top 10px
+    p
+        color white
+    
+    .fs7
+        text-align center
+    .fs3
+        color db
+    
 
 .sec1
     background url(../../img/bg1.png) 0 0 no-repeat

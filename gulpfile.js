@@ -24,14 +24,14 @@ gulp.task('stylus', function(){
 });
 
 
-// gulp.task('style-first', function(){
-//     gulp.src(['bower_components/normalize.styl/normalize.styl', 
-//               'css/stylus/first.styl'])
-//        .pipe(stylus({compress : true}))
-//        .pipe(concat('first.css'))
-//        .pipe(autoprefixer())
-//        .pipe(gulp.dest('css/build'));
-// });
+gulp.task('style-first', function(){
+    gulp.src(['bower_components/normalize.styl/normalize.styl', 
+              'css/stylus/first.styl'])
+       .pipe(stylus({compress : true}))
+       .pipe(concat('first.css'))
+       .pipe(autoprefixer())
+       .pipe(gulp.dest('css/build'));
+});
 
 
 gulp.task('svgcss', function(){
@@ -98,5 +98,5 @@ gulp.task('uglify', function() {
 
 
 
-gulp.task('default', ['connect', 'stylus', 'watch', 'svgcss', 'uglify']);
+gulp.task('default', ['connect', 'style-first', 'stylus', 'watch', 'svgcss', 'uglify']);
 
