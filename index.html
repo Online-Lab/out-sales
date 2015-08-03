@@ -89,12 +89,25 @@
                     <script src="http://megatimer.ru/s/3935f30a0707af4bf7e50e69e966209d.js"></script>
                   </div>
 
-                  <button 
-                    onclick="yaCounter31164566.reachGoal('zayavka1'); return true;" 
-                    class = "wow fadeInRight btn" 
-                    type="btn" 
-                    ng-click = "openLeaveApplication()" 
-                    data-wow-delay="0.4s">Оставить <br> заявку</button>
+                  <form
+                    name = "orderCallBackForm" 
+                    ng-controller="orderCallBackCtrl" 
+                    class = "order-callback" 
+                    novalidate>
+
+                    <input type="tel" 
+                      placeholder = "Ваш телефон"
+                      class = "phone"
+                      ng-model = "orderCallBackData.phone"
+                      mask
+                      ng-minlength = "18"
+                      required>
+
+                    <button
+                      ng-disabled="orderCallBackForm.$invalid && orderCallBackForm.$invalid" 
+                      ng-click = "orderCallBackSend(orderCallBackData)">Перезвоните мне</button>
+
+                  </form>
                 </div>
               </div>
             </div>
@@ -517,7 +530,14 @@
   
     <link rel="stylesheet" href="css/build/concat.css">
 
-    <script src="js/build/scripts.min.js"></script>
+    <!-- // <script src="js/build/scripts.min.js"></script> -->
+    <script src="js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="bower_components/slick.js/slick/slick.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/ngDialog/js/ngDialog.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
 
 
     <script type="text/ng-template" id="confirmPopup">

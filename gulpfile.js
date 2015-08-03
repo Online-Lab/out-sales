@@ -75,12 +75,12 @@ gulp.task('watch', function(){
 
 gulp.task('uglify', function() {
   gulp.src(['js/*.js', 
-    'js/vendor/*.js',
+    'js/vendor/jquery-1.11.3.min.js',
     'bower_components/slick.js/slick/slick.min.js',
     'bower_components/angular/angular.min.js',
     'bower_components/ngDialog/js/ngDialog.min.js'])
     .pipe(order([
-        'js/vendor/modernizr-2.8.3.min.js',
+        // 'js/vendor/modernizr-2.8.3.min.js',
         'js/vendor/jquery-1.11.3.min.js',
         'bower_components/slick.js/slick/slick.min.js', 
         'bower_components/angular/angular.min.js',

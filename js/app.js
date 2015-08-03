@@ -121,9 +121,6 @@ app.controller('orderCallPopupCtrl', ['$scope', 'ngDialog', 'Mandrill', function
     }
 }]);
 
-
-
-
 app.controller('leaveApplicationMiniCtrl', ['$scope', 'ngDialog', 'Mandrill', function($scope, ngDialog, Mandrill){
     $scope.leaveApplicationMiniData = {
         subject: 'Оставить заявку',
@@ -142,7 +139,7 @@ app.controller('leaveApplicationMiniCtrl', ['$scope', 'ngDialog', 'Mandrill', fu
            Mandrill.messageWork(f).success(function(){
                 ngDialog.open({
                     template: 'confirmPopup',
-                    className: 'confirmPopup',
+                    className: 'confirmPopup'
                 });
 
                 setTimeout(function(){
@@ -183,6 +180,32 @@ app.controller('questionFormCtrl', ['$scope', 'ngDialog', 'Mandrill', function($
            });
         }
     }
-}])
+}]);
 
-;
+app.controller('orderCallBackCtrl', ['$scope', 'ngDialog', 'Mandrill', function($scope, ngDialog, Mandrill){
+    $scope.orderCallBackData = {
+        subject: 'Акция',
+        phone: '',
+        msg: '',
+        msgF: function(){
+            return this.msg = 'Гражданин по телефону: ' + this.phone + ' интересуется действующей акцией';
+        }
+    };
+    $scope.orderCallBackSend = function(f){
+        f.msgF();
+        if(f.phone == ''){
+            console.log('Ошибка телефон: ' + f.phone );
+        }else{
+           Mandrill.messageWork(f).success(function(){
+                ngDialog.open({
+                    template: 'confirmPopup',
+                    className: 'confirmPopup'
+                });
+
+                setTimeout(function(){
+                    ngDialog.closeAll();
+                }, 1000);
+           });
+        }
+    }
+}]);
