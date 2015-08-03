@@ -971,7 +971,30 @@ form.popup
         color black
         font-size txt18
 
-
-
+.social-wrap
+    span
+        vertical-align top
+        display inline-block 
+        margin-top 10px
+.social_links
+    display inline-block
+    padding-left 20px
+    margin 0
+    .vk, 
+    .fb
+        width 24px
+        height 24px
+        display inline-block
+        margin-top 10px
+        background-image url('../../img/social-icon-sprite.png')
+        background-repeat no-repeat
+    .vk
+        background-position: 0 -102px;
+        &:hover
+            background-position: -34px -102px;
+    .fb
+        background-position: 0 -0;
+        &:hover
+            background-position: -34px -0;
 
 @import media
